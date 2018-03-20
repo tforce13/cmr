@@ -1,0 +1,45 @@
+
+<div class="row mt-5">
+  <div class="col-md-12">
+    <!--Card-->
+    <div class="card card-cascade narrower mt-5">
+        
+      <!--Card image-->
+      <div class="view gradient-card-header blue-gradient">
+          <h4 class="h4-responsive">Alerts </h4>
+      </div>
+      <!--/Card image-->
+
+      <!--Card content-->
+      <div class="card-body text-center">
+        <!--Info message-->
+        <a class="btn btn-info waves-light" (click)="showInfo()" mdbRippleRadius>Info message</a>
+        <!--Warning message-->
+        <a class="btn btn-warning waves-light" (click)="showWarning()" mdbRippleRadius>Warning message</a>
+        <!--Success message-->
+        <a class="btn btn-success waves-light" (click)="showSuccess()" mdbRippleRadius>Success message</a>
+        <!--Error message-->
+        <a class="btn btn-danger waves-light" (click)="showError()" mdbRippleRadius>Error message</a>
+
+        <hr>
+
+        <h2>Placement:</h2>
+        <p>
+        <a class="btn btn-info waves-light" (click)="showTopLeft()" mdbRippleRadius>Top left</a>
+        <a class="btn btn-info waves-light" (click)="showTopCenter()" mdbRippleRadius>Top center</a>
+        <a class="btn btn-info waves-light" (click)="showTopFullWidth()" mdbRippleRadius>Top full width</a>
+        <a class="btn btn-info waves-light" (click)="showTopRight()" mdbRippleRadius>Top right</a>
+        </p>
+        <p>
+        <a class="btn btn-info waves-light" (click)="showBottomLeft()" mdbRippleRadius>Bottom left</a>
+        <a class="btn btn-info waves-light" (click)="showBottomCenter()" mdbRippleRadius>Bottom center</a>
+        <a class="btn btn-info waves-light" (click)="showBottomFullWidth()" mdbRippleRadius>Bottom full width</a>
+        <a class="btn btn-info waves-light" (click)="showBottomRight()" mdbRippleRadius>Bottom right</a>
+        </p>
+
+      </div>
+      <!--/.Card content-->
+    </div>
+    <!--/.Card-->
+  </div>
+</div>
