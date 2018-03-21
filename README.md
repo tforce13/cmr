@@ -62,6 +62,7 @@ export class AppRoutingModule { }
     npm install
     ng generate module core -m app
     ng generate service core/auth -m core
+    ng generate service core/validation -m core
     ng generate service core/notify -m core
     ng generate guard core/auth -m core
     ng generate module pages -m app
