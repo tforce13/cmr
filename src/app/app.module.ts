@@ -12,6 +12,11 @@ import { SharedModule } from './shared/shared.module';
 import { ErrorModule } from './views/errors/error.module';
 import { NavigationModule } from './main-layout/navigation/navigation.module';
 import { CoreModule } from './core/core.module';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { CoreModule } from './core/core.module';
     ViewsModule,
     ErrorModule,
     ToastModule.forRoot(),
-    CoreModule
+    CoreModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),    
   ],
   providers: [],
   bootstrap: [AppComponent],

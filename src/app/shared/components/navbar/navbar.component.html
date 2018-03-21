@@ -35,3 +35,47 @@
     </ul>
   </links>
 </mdb-navbar>
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-blue scrolling-navbar" [containerInside]="false">
+    <logo>
+        <a class="logo navbar-brand" href="#">
+            <img src="./assets/img/cmr.png" height="50" alt="CMR logo">
+            <strong>CMR</strong>
+        </a>
+    </logo>
+    <links>
+        <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/home#home">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pages/home/#featured" data-offset="100">Featured</a>
+            </li>
+            <li class="nav-item" *ngIf="isLogin">
+                <a class="nav-link"  href="/pages/register" data-offset="100">Rates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pages/home/#contact" data-offset="100">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item waves-light" mdbRippleRadius *ngIf="!isLogin">
+                <a class="nav-link" href="/pages/login">Login<i class="fa fa-sign-in"></i></a>
+            </li>
+            <li class="nav-item waves-light" mdbRippleRadius *ngIf="!isLogin">
+                <a class="nav-link" href="/pages/register">Register<i class="fa fa-edit"></i></a>
+            </li>
+            <li class="nav-item dropdown btn-group" *ngIf="isLogin" dropdown>
+              <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+                <img src="{{photoURL}}" height="35" class="rounded-circle" alt="avatar">
+                <span class="badge pill badge-secondary">{{email}}</span>
+              </a>
+              <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+                <a class="dropdown-item" href="#" (click)="onClickProfile()">Profile<i class="fa fa-user"></i></a> 
+                <a class="dropdown-item" href="#" (click)="onClickLogout()">Logout<i class="fa fa-sign-out"></i></a>
+              </div>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>

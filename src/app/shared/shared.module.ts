@@ -17,7 +17,9 @@ import { FeaturedComponent } from './components/featured/featured.component';
 import { FactsComponent } from './components/facts/facts.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { AuthService } from './../core/auth.service';
+import { AuthGuard } from './../core/auth.guard';
+import { NotifyService } from './../core/notify.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -59,7 +61,10 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent            
   ],
   providers: [
-    NotificationService
+    NotificationService,
+    AuthService,
+    AuthGuard,
+    NotifyService
   ],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
