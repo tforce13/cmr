@@ -20,6 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from './../core/auth.service';
 import { AuthGuard } from './../core/auth.guard';
 import { NotifyService } from './../core/notify.service';
+import { CompareComponent } from './components/compare/compare.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { NotifyService } from './../core/notify.service';
     FeaturedComponent,
     FactsComponent,
     ContactComponent,
-    FooterComponent        
+    FooterComponent,
+    CompareComponent        
   ],
   exports: [
     MDBBootstrapModule,
@@ -58,7 +61,8 @@ import { NotifyService } from './../core/notify.service';
     FeaturedComponent,
     FactsComponent,
     ContactComponent,
-    FooterComponent            
+    FooterComponent,
+    CompareComponent            
   ],
   providers: [
     NotificationService,

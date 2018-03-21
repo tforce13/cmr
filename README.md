@@ -55,6 +55,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
+# Angular Material Design for Bootstrap
+
+Version 5.2.3
+
 # Angular CLI Scaffolding
 
     ng new cmr --service-worker --routing --style scss --skip-install
@@ -74,13 +78,14 @@ export class AppRoutingModule { }
     ng generate component pages/profile -m pages
     ng generate component pages/rates -m pages
     ng generate module shared -m app
-    ng generate component shared/components/header -m shared/components
-    ng generate component shared/components/navbar -m shared/components
-    ng generate component shared/components/action -m shared/components
-    ng generate component shared/components/featured -m shared/components
-    ng generate component shared/components/facts -m shared/components
-    ng generate component shared/components/contact -m shared/components
-    ng generate component shared/components/footer -m shared/components
+    ng generate component shared/components/header -m shared
+    ng generate component shared/components/navbar -m shared
+    ng generate component shared/components/action -m shared
+    ng generate component shared/components/featured -m shared
+    ng generate component shared/components/facts -m shared
+    ng generate component shared/components/compare -m shared    
+    ng generate component shared/components/contact -m shared
+    ng generate component shared/components/footer -m shared
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
