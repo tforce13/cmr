@@ -5,16 +5,11 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routes.service';
-
+import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutes } from './app.routes.service';
 import { ViewsModule } from './views/views.module';
 import { SharedModule } from './shared/shared.module';
-
-// import { MDBSpinningPreloader } from './typescripts/pro/';
-
 import { ErrorModule } from './views/errors/error.module';
-
-// main layout
 import { NavigationModule } from './main-layout/navigation/navigation.module';
 
 @NgModule({
@@ -25,7 +20,8 @@ import { NavigationModule } from './main-layout/navigation/navigation.module';
     BrowserModule,
     BrowserAnimationsModule,
     NavigationModule,
-    AppRoutes,
+    AppRoutingModule,
+//    AppRoutes,
     RouterModule,
     FormsModule,
     SharedModule,

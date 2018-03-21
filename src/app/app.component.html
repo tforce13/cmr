@@ -1,20 +1,13 @@
 
+<!--
 <app-navigation *ngIf="!specialPage"></app-navigation>
-
 <mdb-navbar *ngIf="specialPage" SideClass="navbar fixed-top navbar-expand-md scrolling-navbar" [containerInside]="false">
-
-  <!-- SideNav slide-out button -->
   <div class="float-xs-left">
     <a (click)="goBack()" class="mr-5"><i class="fa fa-arrow-left"></i> Go back</a>
   </div>
-  <!--/. SideNav slide-out button -->
-
-  <!-- Breadcrumb-->
   <div class="breadcrumb-dn mr-auto">
       <p class="mb-0">Material Design for Bootstrap</p>
   </div>
-  <!--/. Breadcrumb-->
-  
   <ul class="nav navbar-nav nav-flex-icons ml-auto">
       <li class="nav-item">
       <a class="nav-link waves-light" mdbRippleRadius><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
@@ -36,16 +29,13 @@
       </div>
   </li>
   </ul>
-
 </mdb-navbar>
-
 <main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}">
-    
     <app-notification></app-notification>
-
   <div [class.container-fluid]="!specialPage">
     <router-outlet></router-outlet>
   </div>
 </main>
-
 <app-footer *ngIf="!specialPage"></app-footer>
+-->
+<router-outlet></router-outlet>
