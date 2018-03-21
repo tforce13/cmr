@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   submitted: boolean = false;
   formErrors: FormErrors = {
     'email': '',
-    'password': '',
+    'password': ''
   };
 
   validationMessages = {
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       'pattern': 'Password must be include at one letter and one number.',
       'minlength': 'Password must be at least 4 characters long.',
       'maxlength': 'Password cannot be more than 40 characters long.',
-    },
+    }
   };
 
   constructor(
@@ -43,11 +43,6 @@ export class LoginComponent implements OnInit {
     this.buildForm();    
   }
 
-  signup() {
-    this.auth.emailSignUp(this.loginForm.value['email'], this.loginForm.value['password']);
-  }
-  
-
   buildForm() {
     this.loginForm = this.fb.group({
       'email': ['', [
@@ -55,12 +50,11 @@ export class LoginComponent implements OnInit {
         Validators.email,
       ]],
       'password': ['', [
-        //Validators.pattern('/^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,100}$/)'),
         Validators.required,
         ValidationService.passwordValidator,
         Validators.minLength(6),
         Validators.maxLength(25),
-      ]],
+      ]]
     });
 
     this.loginForm.valueChanges.subscribe((data) => this.onValueChanged(data));
@@ -88,32 +82,45 @@ export class LoginComponent implements OnInit {
       }
     }
   }  
+
+  onClickEmailLogin() {
+    console.log(' login email');
+    this.auth.emailLogin(this.loginForm.value['email'], this.loginForm.value['password'])
+    .then(() => this.afterLogin());
+  }
   
   onClickGoogleLogin() {
     console.log(' login google');
     this.auth.googleLogin()
-      .then(() => this.afterSignIn());    
+    .then(() => this.afterLogin());    
    }
 
    onClickFacebookLogin() {
     console.log(' login facebook');
     this.auth.facebookLogin()
-      .then(() => this.afterSignIn());    
+    .then(() => this.afterLogin());    
    }
 
    onClickTwitterLogin() {
     console.log(' login twitter');
     this.auth.twitterLogin()
-      .then(() => this.afterSignIn());    
+    .then(() => this.afterLogin());    
    }
 
    onClickGithubLogin() {
     console.log(' login github');
     this.auth.githubLogin()
-    .then(() => this.afterSignIn());    
+    .then(() => this.afterLogin());    
   }
 
-  private afterSignIn() {
+  onClickAnonymousLogin() {
+    console.log(' login anonymous');
+    this.auth.anonymousLogin()
+    .then(() => this.afterLogin());
+  }
+
+  private afterLogin() {
+    this.submitted = true;
     this.router.navigate(['/pages/home']);
   }  
   

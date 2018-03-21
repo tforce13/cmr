@@ -5,7 +5,7 @@
 <div class="container">   
     <div class="row justify-content-center">
         <div *ngIf="!submitted" class="col-xl-4 col-md-6 col-12">
-            <form [formGroup]="loginForm" (ngSubmit)="signup()">
+            <form [formGroup]="loginForm" (ngSubmit)="onClickEmailLogin()">
                 <div class="card">
                     <div class="card-body">
                         <p class="h4 text-center mb-4">Login</p>

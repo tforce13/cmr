@@ -1,2 +1,50 @@
-<app-header></app-header>
-<p>register</p>
+<br>
+<br>
+<br>
+<br>
+<div class="container">   
+    <div class="row justify-content-center">
+        <div *ngIf="!submitted" class="col-xl-4 col-md-6 col-12">
+            <form [formGroup]="registerForm" (ngSubmit)="onClickEmailRegister()">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="h4 text-center mb-4">Register</p>
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <label for="email">email</label>
+                            <input type="email" class="form-control" formControlName="email" mdbActive/>
+                            <div *ngIf="formErrors.email" class="alert alert-danger">
+                                {{ formErrors.email }}
+                            </div>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <label for="password">password</label>
+                            <input type="password" class="form-control" formControlName="password" mdbActive/>
+                            <div *ngIf="formErrors.password" class="alert alert-danger">
+                                {{ formErrors.password }}
+                            </div>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <label for="verifypassword">verify password</label>
+                            <input type="password" class="form-control" formControlName="verifypassword" mdbActive/>
+                            <div *ngIf="formErrors.verifypassword" class="alert alert-danger">
+                                {{ formErrors.verifypassword }}
+                            </div>
+                        </div>
+                        <div  class="text-center">
+                            <button type="submit" class="btn btn-outline-primary btn-rounded waves-effect"  mdbRippleRadius [disabled]="!registerForm.valid">Register</button>
+                            <div class="card-body  d-flex justify-content-around">
+                                <a class="btn-floating btn-sm blue-gradient" (click)="onClickFacebookRegister()"><i class="fa fa fa-facebook"></i></a>
+                                <a class="btn-floating btn-sm blue-gradient" (click)="onClickGoogleRegister()"><i class="fa fa fa-google"></i></a>
+                                <a class="btn-floating btn-sm blue-gradient" (click)="onClickTwitterRegister()"><i class="fa fa fa-twitter"></i></a>
+                                <a class="btn-floating btn-sm blue-gradient" (click)="onClickGithubRegister()"><i class="fa fa fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </form>  
+        </div>
+    </div>
+</div>
