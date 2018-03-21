@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RatesComponent } from './rates/rates.component';
 
 const routes: Routes = [
   {
@@ -12,9 +16,21 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   }, {
+    path: 'login',
+    component: LoginComponent,
+  }, {
+    path: 'register',
+    component: RegisterComponent,
+  }, {
+    path: 'profile',
+    component: ProfileComponent,
+  }, {
+    path: 'rates',
+    component: RatesComponent,    
+  }, {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full',    
+    pathMatch: 'full'    
   }]
 }];
 

@@ -11,6 +11,7 @@ import { ViewsModule } from './views/views.module';
 import { SharedModule } from './shared/shared.module';
 import { ErrorModule } from './views/errors/error.module';
 import { NavigationModule } from './main-layout/navigation/navigation.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavigationModule } from './main-layout/navigation/navigation.module';
     SharedModule,
     ViewsModule,
     ErrorModule,
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
