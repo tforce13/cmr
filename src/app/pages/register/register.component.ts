@@ -18,24 +18,24 @@ export class RegisterComponent implements OnInit {
   formErrors: FormErrors = {
     'email': '',
     'password': '',
-    'verifypassword': ''
+    'verifypassword': '',
   };
   validationMessages = {
     'email': {
       'required': 'Email is required.',
-      'email': 'Email must be a valid email'
+      'email': 'Email must be a valid email',
     },
     'password': {
       'required': 'Password is required.',
       'pattern': 'Password must be include at one letter and one number.',
       'minlength': 'Password must be at least 4 characters long.',
-      'maxlength': 'Password cannot be more than 40 characters long.'
+      'maxlength': 'Password cannot be more than 40 characters long.',
     },
     'verifypassword': {
       'required': 'Password is required.',
       'pattern': 'Password must be include at one letter and one number.',
       'minlength': 'Password must be at least 4 characters long.',
-      'maxlength': 'Password cannot be more than 40 characters long.'
+      'maxlength': 'Password cannot be more than 40 characters long.',
     },
   };
 
