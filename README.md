@@ -73,7 +73,6 @@ export class AppRoutingModule { }
     ng generate component pages/profile -m pages
     ng generate component pages/rates -m pages
     ng generate module shared -m app
-    ng generate module shared/components -m shared
     ng generate component shared/components/header -m shared/components
     ng generate component shared/components/navbar -m shared/components
     ng generate component shared/components/action -m shared/components
