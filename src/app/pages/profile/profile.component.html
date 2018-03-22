@@ -3,7 +3,8 @@
 <br/>
 <br/>
 <div class="container">
-<ng-container *ngIf="(auth.user | async) || {} as user">
+        
+<ng-container *ngIf="auth.user | async as user">
     <form [formGroup]="profileForm" *ngIf="!submitted" (ngSubmit)="setProfile(user)">
         <p class="h5 text-center mb-4">Profile</p>
         <div class="md-form">
@@ -48,7 +49,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <input type="checkbox" class="filled-in" id="AL" checked="checked">
+                <input type="checkbox" class="filled-in" id="AL" >
                 <label for="AL">Alabama</label>
             </div>
             <div class="col">
@@ -266,6 +267,13 @@
                 <label for="WY">Wyoming</label>
             </div>
         </div>
+        <div class="result" *ngIf="uploadURL | async as url; else displayOldAvatar">
+            <img src="{{ url }}" height="35" class="rounded-circle" alt="avatar">
+            <p>Photo uploaded successfully</p>
+        </div>
+        <ng-template #displayOldAvatar>
+            <img src="{{ user.photoURL }}" height="35" class="rounded-circle" alt="avatar">
+        </ng-template>
         <div class="text-center">
             <div class="file-field">
                 <div class="btn btn-primary btn-sm waves-light" mdbRippleRadius>
@@ -280,9 +288,6 @@
                 <button class="btn btn-primary waves-light" mdbRippleRadius (click)="task.cancel()" [disabled]="!(state === 'paused' || state === 'running')"><i class="fa fa-ban"></i> Cancel</button>
                 <button class="btn btn-primary waves-light" mdbRippleRadius (click)="task.resume()" [disabled]="state === 'running'"><i class="fa fa-play-circle"></i> Resume</button>
             </section>
-            <div class="result" *ngIf="uploadURL | async; let uploadSrc">
-                <a href="{{uploadSrc}}">Photo uploaded</a>
-            </div>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-outline-primary btn-rounded waves-effect" [disabled]="submitted">Submit</button>

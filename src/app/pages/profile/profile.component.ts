@@ -20,7 +20,11 @@ export class ProfileComponent implements OnInit {
   uploadState: Observable<string>;
   task: AngularFireUploadTask;
   photoURL: string;
-
+  //statesLicensed = {
+  //  alabama: {
+  //    name: 'Alabama', selected: true, id: 'AL'
+  //  }
+  //}
     constructor(
     public router: Router,
     private afStorage: AngularFireStorage,
@@ -38,7 +42,8 @@ export class ProfileComponent implements OnInit {
       'zip':       ['', [ Validators.required ] ],
       'company':   ['', [ Validators.required ] ],
       'website':   ['', [ Validators.required ] ],
-      'nmls':      ['', [ Validators.required ] ]
+      'nmls':      ['', [ Validators.required ] ],
+      //'AL':        [this.statesLicensed.alabama.selected, [] ]
     });
   }
   get firstName() { return this.profileForm.get('firstName'); }
@@ -51,6 +56,7 @@ export class ProfileComponent implements OnInit {
   get company()   { return this.profileForm.get('company'); }
   get website()   { return this.profileForm.get('website'); }
   get nmls()      { return this.profileForm.get('nmls'); }
+  //get AL()        { return this.profileForm.get('AL'); }
 
   setProfile(user) {
     this.submitted = true;
@@ -67,7 +73,8 @@ export class ProfileComponent implements OnInit {
         company:   this.company.value,
         website:   this.website.value,
         nmls:      this.nmls.value,
-        photoURL:  this.photoURL
+        photoURL:  this.photoURL,
+        //AL:        this.AL.value
       }
     );
   }  
