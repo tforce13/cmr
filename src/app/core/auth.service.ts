@@ -131,4 +131,8 @@ export class AuthService {
     };
     return userRef.set(data);
   }
+
+  updateProfile(user: User, data: any) {
+    return this.afs.doc(`users/${user.uid}`).update(data);
+  }  
 }

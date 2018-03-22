@@ -97,7 +97,10 @@ export class RegisterComponent implements OnInit {
   onClickEmailRegister() {
     console.log(' register google');
     this.auth.emailSignUp(this.registerForm.value['email'], this.registerForm.value['password'])
-    .then(() => this.afterRegister());
+    .then(() => {
+      
+      this.afterRegister()
+    });
   }
 
   onClickGoogleRegister() {
