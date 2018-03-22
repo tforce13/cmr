@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  {
-    path: 'pages',
-    loadChildren: './pages/pages.module#PagesModule'
-  },
+  { path: 'login', component: LoginComponent },
+//  {
+//    path: 'pages',
+//    loadChildren: './pages/pages.module#PagesModule'
+//  },
   { path: '**', component: HomeComponent }
 ];
 

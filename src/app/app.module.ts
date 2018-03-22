@@ -2,7 +2,7 @@ import { ToastModule } from './typescripts/pro/alerts/toast/toast.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,11 +18,21 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RatesComponent } from './pages/rates/rates.component';
+import { FireFormDirective } from './pages/fire-form.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    RatesComponent,
+    FireFormDirective    
   ],
   imports: [
     BrowserModule,
@@ -31,6 +41,7 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     ViewsModule,
     ErrorModule,

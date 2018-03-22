@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit {
 
   private afterLogin() {
     this.submitted = true;
-    this.router.navigate(['/pages/home']);
+    this.router.navigate(['']);
   }  
   
 }

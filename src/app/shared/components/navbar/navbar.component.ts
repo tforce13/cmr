@@ -26,19 +26,19 @@ export class NavbarComponent implements OnInit {
     this.photoURL = 'https://goo.gl/Fz9nrQ';    
 }
 onClickLogin() {
-  this.router.navigate(['/pages/login']);
+  this.router.navigate(['/login']);
 }
 onClickRegister() {
-  this.router.navigate(['/pages/register']);
+  this.router.navigate(['/register']);
 }
 
 onClickLogout() {
   this.authService.signOut();
-  this.router.navigate(['/pages/home']);
+  this.router.navigate(['']);
 }
 
 onClickProfile() {
-  this.router.navigate(['/pages/profile']);
+  this.router.navigate(['/profile']);
 }
 
 

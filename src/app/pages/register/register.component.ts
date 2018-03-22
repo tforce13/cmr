@@ -135,6 +135,6 @@ export class RegisterComponent implements OnInit {
   
   private afterRegister() {
     this.submitted = true;
-    this.router.navigate(['/pages/profile']);
+    this.router.navigate(['/profile']);
   }    
 }

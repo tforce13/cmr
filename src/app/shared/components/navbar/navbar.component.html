@@ -53,7 +53,7 @@
                 <a class="nav-link" href="#featured" data-offset="100">Featured</a>
             </li>
             <li class="nav-item" *ngIf="isLogin">
-                <a class="nav-link"  href="/pages/register" data-offset="100">Rates</a>
+                <a class="nav-link"  href="/register" data-offset="100">Rates</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contact" data-offset="100">Contact Us</a>
@@ -61,10 +61,10 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item waves-light" mdbRippleRadius *ngIf="!isLogin">
-                <a class="nav-link" href="/pages/login">Login<i class="fa fa-sign-in"></i></a>
+                <a class="nav-link" href="/login">Login<i class="fa fa-sign-in"></i></a>
             </li>
             <li class="nav-item waves-light" mdbRippleRadius *ngIf="!isLogin">
-                <a class="nav-link" href="/pages/register">Register<i class="fa fa-edit"></i></a>
+                <a class="nav-link" href="/register">Register<i class="fa fa-edit"></i></a>
             </li>
             <li class="nav-item dropdown btn-group" *ngIf="isLogin" dropdown>
               <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>

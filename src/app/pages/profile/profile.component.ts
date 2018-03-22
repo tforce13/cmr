@@ -82,7 +82,7 @@ export class ProfileComponent implements OnInit {
   }
 
   onContinue(event) {
-    this.router.navigate(['/pages/home']);
+    this.router.navigate(['']);
   }
 
 }
