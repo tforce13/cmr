@@ -8,38 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent implements OnInit {
-  public isLogin: boolean;
-  public email: string;
-  public photoURL: string;
+export class NavbarComponent {
 
   constructor(
-    public authService: AuthService,
+    public auth: AuthService,
     public router: Router
   ) {
 
   }
 
-  ngOnInit() {
-    this.isLogin = false;
-    this.email = '';
-    this.photoURL = 'https://goo.gl/Fz9nrQ';    
-}
-onClickLogin() {
-  this.router.navigate(['/login']);
-}
-onClickRegister() {
-  this.router.navigate(['/register']);
-}
+  onClickLogin() {
+    this.router.navigate(['/login']);
+  }
 
-onClickLogout() {
-  this.authService.signOut();
-  this.router.navigate(['']);
-}
+  onClickRegister() {
+    this.router.navigate(['/register']);
+  }
 
-onClickProfile() {
-  this.router.navigate(['/profile']);
-}
-
+  onClickLogout() {
+    this.auth.signOut();
+    this.router.navigate(['/']);
+  }
 
 }

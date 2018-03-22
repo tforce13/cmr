@@ -21,12 +21,7 @@ import { FireFormDirective } from './fire-form.directive';
     SharedModule,
   ],
   declarations: [
-    PagesComponent,
-    LoginComponent,
-    RegisterComponent,
-    ProfileComponent,
-    RatesComponent,
-    FireFormDirective    
+    PagesComponent
   ],
   exports: [
     PagesComponent
