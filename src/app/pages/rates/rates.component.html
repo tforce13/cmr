@@ -1,2 +1,69 @@
-<app-header></app-header>
-<p>rates</p>
+<div class="container">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <form *ngIf="path" 
+          fireForm [path]="path" 
+          [formGroup]="rateForm" 
+          novalidate>
+      
+      
+      <h3><strong>PRODUCT</strong></h3>
+    
+      <div *ngFor="let product of defaults">
+        <h3>{{ product }}</h3>
+    
+        <div [formGroupName]="product">
+    
+          <!--input type="number" formControlName="rate" class="input">
+          <input type="number" formControlName="points" class="input">
+          <input type="number" formControlName="apr" class="input">
+          <input type="number" formControlName="closing" class="input">
+          <input class="input" formControlName="enabled" type="checkbox" value="true">
+          <label>
+            Enabled?
+          </label-->
+          
+          <div class="row">
+            <div class="col">
+              <div class="form-check mr-3">
+                <input formControlName="enabled" type="checkbox" class="filled-in form-check-input" id="inlineFormCheckbox2" checked="checked" value="true" mdbActive>
+                <label class="form-check-label" for="inlineFormCheckbox2">Enabled?</label>
+              </div>
+            </div>  
+          </div>           
+          <div class="row"> 
+            <div class="col">
+              <input type="number" formControlName="rate" class="form-control" placeholder="Rate" mdbActive>
+            </div>
+            <div class="col">
+              <input type="number" formControlName="points" class="form-control" placeholder="points" mdbActive>
+            </div>
+            <div class="col">
+              <input type="number" formControlName="apr" class="form-control" placeholder="apr" mdbActive>
+            </div>
+            <div class="col">
+              <input type="number" formControlName="closing" class="form-control" placeholder="closing" mdbActive>
+            </div>
+          </div>
+          
+    
+        </div>
+      </div>
+      
+      <button type="submit" [disabled]="!rateForm.valid || rateForm.pristine" class="btn btn-primary">
+        Update Rates
+      </button>
+  
+      
+    
+    </form>
+  
+    <br>
+    <br>
+    <br>
+    <h2>Form Value</h2>
+    {{ rateForm.value | json }}
+  
+    </div>

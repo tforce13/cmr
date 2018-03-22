@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RatesComponent } from './rates/rates.component';
+import { FireFormDirective } from './fire-form.directive';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { RatesComponent } from './rates/rates.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    RatesComponent
+    RatesComponent,
+    FireFormDirective    
   ],
   exports: [
     PagesComponent
