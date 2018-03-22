@@ -43,8 +43,8 @@ import { CompareComponent } from './components/compare/compare.component';
     FeaturedComponent,
     FactsComponent,
     ContactComponent,
-    FooterComponent,
-    CompareComponent        
+    CompareComponent,        
+    FooterComponent
   ],
   exports: [
     MDBBootstrapModule,
@@ -61,8 +61,8 @@ import { CompareComponent } from './components/compare/compare.component';
     FeaturedComponent,
     FactsComponent,
     ContactComponent,
-    FooterComponent,
-    CompareComponent            
+    CompareComponent,            
+    FooterComponent
   ],
   providers: [
     NotificationService,

@@ -3,7 +3,7 @@ import { AuthService } from './../../../core/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'cmr-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
