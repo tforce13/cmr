@@ -1,20 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { NotifyService } from './notify.service';
-
+import { ProfileService } from './profile.service'
 import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
+import { User } from '../models/user';
 
-interface User {
-  uid: string;
-  email?: string | null;
-  photoURL?: string;
-  displayName?: string;
-}
 
 @Injectable()
 export class AuthService {
@@ -24,7 +18,8 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
               private router: Router,
-              private notify: NotifyService) {
+              private notify: NotifyService,
+              private profile: ProfileService) {
 
     this.user = this.afAuth.authState
       .switchMap((user) => {
@@ -61,7 +56,8 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        return this.updateUserData(credential.user);
+        this.profile.setProfileData(credential.user);
+        return this.setUserData(credential.user);
       })
       .catch((error) => this.handleError(error) );
   }
@@ -71,7 +67,8 @@ export class AuthService {
     return this.afAuth.auth.signInAnonymously()
       .then((user) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        return this.updateUserData(user); // if using firestore
+        this.profile.setProfileData(user);
+        return this.setUserData(user); // if using firestore
       })
       .catch((error) => {
         console.error(error.code);
@@ -85,7 +82,8 @@ export class AuthService {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        return this.updateUserData(user); // if using firestore
+        this.profile.setProfileData(user);
+        return this.setUserData(user); // if using firestore
       })
       .catch((error) => this.handleError(error) );
   }
@@ -94,7 +92,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        return this.updateUserData(user); // if using firestore
+        return this.setUserData(user); // if using firestore
       })
       .catch((error) => this.handleError(error) );
   }
@@ -119,7 +117,7 @@ export class AuthService {
   }
 
   // Sets user data to firestore after succesful login
-  private updateUserData(user: User) {
+  private setUserData(user: User) {
 
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
 
@@ -131,8 +129,4 @@ export class AuthService {
     };
     return userRef.set(data);
   }
-
-  updateProfile(user: User, data: any) {
-    return this.afs.doc(`users/${user.uid}`).update(data);
-  }  
 }

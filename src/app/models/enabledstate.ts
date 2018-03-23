@@ -1,4 +1,4 @@
-export interface StateEnabled {
+export interface EnabledState {
   ak? : boolean;
   al? : boolean;
   az? : boolean;

@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../core/auth.service';
+import { ProfileService } from './../../core/profile.service';
 import { ReactiveFormsModule,  FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import { take, tap, map, switchMap } from 'rxjs/operators';
+import { Profile } from './../../models/profile';
+import { EnabledState } from './../../models/enabledstate';
 
 @Component({
   selector: 'app-profile',
@@ -23,11 +27,15 @@ export class ProfileComponent implements OnInit {
 
     constructor(
     public router: Router,
+    private afs: AngularFirestore,
     private afStorage: AngularFireStorage,
     public fb: FormBuilder,
-    public auth: AuthService) { }
+    public auth: AuthService,
+    public profile: ProfileService) { }
 
   ngOnInit() {
+    const profiles  = this.afs.collection('profiles').valueChanges()
+    profiles.subscribe(console.log);
     this.profileForm = this.fb.group({
       'firstName': ['',    [ Validators.required ] ],
       'lastName':  ['',    [ Validators.required ] ],
@@ -54,25 +62,34 @@ export class ProfileComponent implements OnInit {
   get nmls()      { return this.profileForm.get('nmls'); }
   get al()        { return this.profileForm.get('al'); }
 
+
   setProfile(user) {
     this.submitted = true;
     this.uploadURL.subscribe(str => this.photoURL = str);
-    return this.auth.updateProfile(user,
-      {
-        firstName: this.firstName.value,
-        lastName:  this.lastName.value,
-        address1:  this.address1.value,
-        address2:  this.address2.value,
-        city:      this.city.value,
-        state:     this.state.value,
-        zip:       this.zip.value,
-        company:   this.company.value,
-        website:   this.website.value,
-        nmls:      this.nmls.value,
-        photoURL:  this.photoURL,
-        al:        this.al.value
-      }
-    );
+
+    const enabledState: EnabledState = {
+      al: this.al.value
+    };
+
+    const profile: Profile = {
+      uid:          user.uid,
+      email:        user.email || null,
+      displayName:  user.displayName || 'nameless user',
+      photoURL:     this.photoURL || 'https://goo.gl/Fz9nrQ',
+      firstName:    this.firstName.value,
+      lastName:     this.lastName.value,
+      address1:     this.address1.value,
+      address2:     this.address2.value,
+      city:         this.city.value,
+      state:        this.state.value,
+      zip:          this.zip.value,
+      company:      this.company.value,
+      website:      this.website.value,
+      nmls:         this.nmls.value,
+      enabledState: enabledState      
+    };  
+
+    return this.profile.updateProfile(user, profile);
   }  
 
   upload(event) {

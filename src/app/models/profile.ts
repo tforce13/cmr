@@ -1,9 +1,10 @@
-import { StateEnabled } from "./stateenabled";
+import { EnabledState } from "./enabledstate";
 
 export interface Profile {
-  uid?: string;
+  uid: string;
+  email?: string | null;
+  photoURL?: string;
   displayName?: string;
-  email?: string;
   firstName?:string;
   lastName?:string;
   address1?: string;
@@ -11,9 +12,8 @@ export interface Profile {
   city?: string;
   state?: string;
   zip?: string;
-  company1?: string;
+  company?: string;
   website?: string;
   nmls?: string;
-  photoUR?: string;
-  stateEnabled? :StateEnabled;
-  }
+  enabledState? :EnabledState;
+}
