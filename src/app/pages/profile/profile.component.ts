@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../core/auth.service';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule,  FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
@@ -20,11 +20,7 @@ export class ProfileComponent implements OnInit {
   uploadState: Observable<string>;
   task: AngularFireUploadTask;
   photoURL: string;
-  //statesLicensed = {
-  //  alabama: {
-  //    name: 'Alabama', selected: true, id: 'AL'
-  //  }
-  //}
+
     constructor(
     public router: Router,
     private afStorage: AngularFireStorage,
@@ -33,17 +29,17 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.profileForm = this.fb.group({
-      'firstName': ['', [ Validators.required ] ],
-      'lastName':  ['', [ Validators.required ] ],
-      'address1':  ['', [ Validators.required ] ],
-      'address2':  ['', [ Validators.required ] ],
-      'city':      ['', [ Validators.required ] ],
-      'state':     ['', [ Validators.required ] ],
-      'zip':       ['', [ Validators.required ] ],
-      'company':   ['', [ Validators.required ] ],
-      'website':   ['', [ Validators.required ] ],
-      'nmls':      ['', [ Validators.required ] ],
-      //'AL':        [this.statesLicensed.alabama.selected, [] ]
+      'firstName': ['',    [ Validators.required ] ],
+      'lastName':  ['',    [ Validators.required ] ],
+      'address1':  ['',    [ Validators.required ] ],
+      'address2':  ['',    [ Validators.required ] ],
+      'city':      ['',    [ Validators.required ] ],
+      'state':     ['',    [ Validators.required ] ],
+      'zip':       ['',    [ Validators.required ] ],
+      'company':   ['',    [ Validators.required ] ],
+      'website':   ['',    [ Validators.required ] ],
+      'nmls':      ['',    [ Validators.required ] ],
+      'al' :       [false, [ Validators.required ] ]
     });
   }
   get firstName() { return this.profileForm.get('firstName'); }
@@ -56,7 +52,7 @@ export class ProfileComponent implements OnInit {
   get company()   { return this.profileForm.get('company'); }
   get website()   { return this.profileForm.get('website'); }
   get nmls()      { return this.profileForm.get('nmls'); }
-  //get AL()        { return this.profileForm.get('AL'); }
+  get al()        { return this.profileForm.get('al'); }
 
   setProfile(user) {
     this.submitted = true;
@@ -74,7 +70,7 @@ export class ProfileComponent implements OnInit {
         website:   this.website.value,
         nmls:      this.nmls.value,
         photoURL:  this.photoURL,
-        //AL:        this.AL.value
+        al:        this.al.value
       }
     );
   }  

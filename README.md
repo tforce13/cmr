@@ -68,6 +68,7 @@ Version 5.2.3
     ng generate service core/auth -m core
     ng generate service core/validation -m core
     ng generate service core/notify -m core
+    ng generate service core/profile -m core
     ng generate guard core/auth -m core
     ng generate module pages -m app
     ng generate module pages/pages-routing -m pages/pages
