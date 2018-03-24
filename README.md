@@ -1,6 +1,10 @@
 # cmr
 Compare Mortgage Rates
 
+# Install Angular CLI
+
+    npm install -g @angular/cli
+    
 # Install AngularFire and Firebase
 
     npm install angularfire2 firebase --save
