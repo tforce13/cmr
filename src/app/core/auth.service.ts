@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
 import { User } from '../models/user';
 
-
 @Injectable()
 export class AuthService {
 
@@ -19,7 +18,7 @@ export class AuthService {
               private afs: AngularFirestore,
               private router: Router,
               private notify: NotifyService,
-              private profile: ProfileService) {
+              private profileService: ProfileService) {
 
     this.user = this.afAuth.authState
       .switchMap((user) => {
@@ -31,7 +30,6 @@ export class AuthService {
       });
   }
 
-  ////// OAuth Methods /////
   googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
@@ -56,19 +54,16 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        this.profile.setProfileData(credential.user);
         return this.setUserData(credential.user);
       })
       .catch((error) => this.handleError(error) );
   }
 
-  //// Anonymous Auth ////
   anonymousLogin() {
     return this.afAuth.auth.signInAnonymously()
       .then((user) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        this.profile.setProfileData(user);
-        return this.setUserData(user); // if using firestore
+        return this.setUserData(user); 
       })
       .catch((error) => {
         console.error(error.code);
@@ -77,13 +72,11 @@ export class AuthService {
       });
   }
 
-  //// Email/Password Auth ////
   emailSignUp(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        this.profile.setProfileData(user);
-        return this.setUserData(user); // if using firestore
+        return this.setUserData(user);
       })
       .catch((error) => this.handleError(error) );
   }
@@ -92,12 +85,11 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Compare Mortgage Rages', 'success');
-        return this.setUserData(user); // if using firestore
+        return this.setUserData(user); 
       })
       .catch((error) => this.handleError(error) );
   }
 
-  // Sends email allowing user to reset password
   resetPassword(email: string) {
     const fbAuth = firebase.auth();
 
@@ -110,13 +102,30 @@ export class AuthService {
     this.afAuth.auth.signOut();
   }
 
-  // If error, console log and notify user
   private handleError(error: Error) {
     console.error(error);
     this.notify.update(error.message, 'error');
   }
 
-  // Sets user data to firestore after succesful login
+  private userHasData (user: User) {
+
+    const db = firebase.firestore();
+    const docRef = db.collection("users").doc(user.uid);
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            return true
+        } else {
+            console.log("No such document!");
+            return false;
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+        return false;
+    });
+  }
+
   private setUserData(user: User) {
 
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
@@ -126,7 +135,26 @@ export class AuthService {
       email: user.email || null,
       displayName: user.displayName || 'nameless user',
       photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ',
+      profileComplete: false
     };
-    return userRef.set(data);
+
+    const db = firebase.firestore();
+    const docRef = db.collection("users").doc(user.uid);
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            console.log("No such document!");
+            return userRef.set(data);
+          }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });    
   }
+
+  updateUserData(user: User) {
+    return this.afs.doc(`users/${user.uid}`).update(user);
+  }    
+
 }

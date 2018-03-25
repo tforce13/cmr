@@ -28,23 +28,24 @@ export class ProfileService {
           return Observable.of(null);
         }
       });
+  }  
+
+  setProfile ( profile: Profile) {
+    const profileRef: AngularFirestoreDocument<Profile> = this.afs.doc(`profiles/${profile.uid}`);
+    const db = firebase.firestore();
+    const docRef = db.collection("profiles").doc(profile.uid);
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            return this.afs.doc(`profiles/${profile.uid}`).update(profile);
+        } else {
+            console.log("No such document!");
+            return profileRef.set(profile);
+          }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });    
   }
 
-  
-  setProfileData(user: User) {
-
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`profiles/${user.uid}`);
-
-    const data: User = {
-      uid: user.uid,
-      email: user.email || null,
-      displayName: user.displayName || 'nameless user',
-      photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ',
-    };
-    return userRef.set(data);
-  }
-
-  updateProfile(user: User, profile: Profile) {
-    return this.afs.doc(`profiles/${user.uid}`).update(profile);
-  }    
 }

@@ -3,4 +3,5 @@ export interface User {
   email?: string | null;
   photoURL?: string;
   displayName?: string;
+  profileComplete?: boolean;
 }
