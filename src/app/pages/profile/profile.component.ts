@@ -244,6 +244,7 @@ export class ProfileComponent implements OnInit {
   get wy()        { return this.profileForm.get('wy'); }
 
   setProfile(usr) {
+    console.log ("setProfile");
     this.submitted = true;
     this.uploadURL.subscribe(str => this.photoURL = str);
 
@@ -322,6 +323,8 @@ export class ProfileComponent implements OnInit {
       nmls:         this.nmls.value,
       enabledState: enabledState      
     };
+
+    console.log ('Profile: ', profile);
 
     this.authService.updateUserData(user);
     this.profileService.setProfile(profile);
