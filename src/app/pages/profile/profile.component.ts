@@ -51,55 +51,55 @@ export class ProfileComponent implements OnInit {
       website:   ['', [ Validators.required ] ],
       nmls:      ['', [ Validators.required ] ],
       al:        [false, [ Validators.required ] ],
-      //ak:        [false, [ Validators.required ] ],
-      // az:       [false, [ Validators.required ] ],
-      // ar:       [false, [ Validators.required ] ],
-      // ca:       [false, [ Validators.required ] ],
-      // co:       [false, [ Validators.required ] ],
-      // ct:       [false, [ Validators.required ] ],
-      // de:       [false, [ Validators.required ] ],
-      // fl:       [false, [ Validators.required ] ],
-      // ga:       [false, [ Validators.required ] ],
-      // hi:       [false, [ Validators.required ] ],
-      // id:       [false, [ Validators.required ] ],
-      // il:       [false, [ Validators.required ] ],
-      // in:       [false, [ Validators.required ] ],
-      // ia:       [false, [ Validators.required ] ],
-      // ks:       [false, [ Validators.required ] ],
-      // ky:       [false, [ Validators.required ] ],
-      // la:       [false, [ Validators.required ] ],
-      // me:       [false, [ Validators.required ] ],
-      // md:       [false, [ Validators.required ] ],
-      // ma:       [false, [ Validators.required ] ],
-      // mi:       [false, [ Validators.required ] ],
-      // mn:       [false, [ Validators.required ] ],
-      // ms:       [false, [ Validators.required ] ],
-      // mo:       [false, [ Validators.required ] ],
-      // mt:       [false, [ Validators.required ] ],
-      // ne:       [false, [ Validators.required ] ],
-      // nv:       [false, [ Validators.required ] ],
-      // nh:       [false, [ Validators.required ] ],
-      // nj:       [false, [ Validators.required ] ],
-      // nm:       [false, [ Validators.required ] ],
-      // ny:       [false, [ Validators.required ] ],
-      // nc:       [false, [ Validators.required ] ],
-      // nd:       [false, [ Validators.required ] ],
-      // oh:       [false, [ Validators.required ] ],
-      // ok:       [false, [ Validators.required ] ],
-      // or:       [false, [ Validators.required ] ],
-      // pa:       [false, [ Validators.required ] ],
-      // ri:       [false, [ Validators.required ] ],
-      // sc:       [false, [ Validators.required ] ],
-      // sd:       [false, [ Validators.required ] ],
-      // tn:       [false, [ Validators.required ] ],
-      // tx:       [false, [ Validators.required ] ],
-      // ut:       [false, [ Validators.required ] ],
-      // vt:       [false, [ Validators.required ] ],
-      // va:       [false, [ Validators.required ] ],
-      // wa:       [false, [ Validators.required ] ],
-      // wv:       [false, [ Validators.required ] ],
-      // wi:       [false, [ Validators.required ] ],
-      // wy:       [false, [ Validators.required ] ]      
+      ak:        [false, [ Validators.required ] ],
+      az:        [false, [ Validators.required ] ],
+      ar:        [false, [ Validators.required ] ],
+      ca:        [false, [ Validators.required ] ],
+      co:        [false, [ Validators.required ] ],
+      ct:        [false, [ Validators.required ] ],
+      de:        [false, [ Validators.required ] ],
+      fl:        [false, [ Validators.required ] ],
+      ga:        [false, [ Validators.required ] ],
+      hi:        [false, [ Validators.required ] ],
+      id:        [false, [ Validators.required ] ],
+      il:        [false, [ Validators.required ] ],
+      in:        [false, [ Validators.required ] ],
+      ia:        [false, [ Validators.required ] ],
+      ks:        [false, [ Validators.required ] ],
+      ky:        [false, [ Validators.required ] ],
+      la:        [false, [ Validators.required ] ],
+      me:        [false, [ Validators.required ] ],
+      md:        [false, [ Validators.required ] ],
+      ma:        [false, [ Validators.required ] ],
+      mi:        [false, [ Validators.required ] ],
+      mn:        [false, [ Validators.required ] ],
+      ms:        [false, [ Validators.required ] ],
+      mo:        [false, [ Validators.required ] ],
+      mt:        [false, [ Validators.required ] ],
+      ne:        [false, [ Validators.required ] ],
+      nv:        [false, [ Validators.required ] ],
+      nh:        [false, [ Validators.required ] ],
+      nj:        [false, [ Validators.required ] ],
+      nm:        [false, [ Validators.required ] ],
+      ny:        [false, [ Validators.required ] ],
+      nc:        [false, [ Validators.required ] ],
+      nd:        [false, [ Validators.required ] ],
+      oh:        [false, [ Validators.required ] ],
+      ok:        [false, [ Validators.required ] ],
+      or:        [false, [ Validators.required ] ],
+      pa:        [false, [ Validators.required ] ],
+      ri:        [false, [ Validators.required ] ],
+      sc:        [false, [ Validators.required ] ],
+      sd:        [false, [ Validators.required ] ],
+      tn:        [false, [ Validators.required ] ],
+      tx:        [false, [ Validators.required ] ],
+      ut:        [false, [ Validators.required ] ],
+      vt:        [false, [ Validators.required ] ],
+      va:        [false, [ Validators.required ] ],
+      wa:        [false, [ Validators.required ] ],
+      wv:        [false, [ Validators.required ] ],
+      wi:        [false, [ Validators.required ] ],
+      wy:        [false, [ Validators.required ] ]      
     });
 
     this.afAuth.authState.pipe(
@@ -121,55 +121,55 @@ export class ProfileComponent implements OnInit {
                 website:   profile.website,
                 nmls:      profile.nmls,
                 al:        profile.enabledState.al,
-                //ak:        profile.enabledState.ak
-                // az:     profile.enabledState.az,
-                // ar:     profile.enabledState.ar,
-                // ca:     profile.enabledState.ca,
-                // co:     profile.enabledState.co,
-                // ct:     profile.enabledState.ct,
-                // de:     profile.enabledState.de,
-                // fl:     profile.enabledState.fl,
-                // ga:     profile.enabledState.ga,
-                // hi:     profile.enabledState.hi,
-                // id:     profile.enabledState.id,
-                // il:     profile.enabledState.il,
-                // in:     profile.enabledState.in,
-                // ia:     profile.enabledState.ia,
-                // ks:     profile.enabledState.ks,
-                // ky:     profile.enabledState.ky,
-                // la:     profile.enabledState.la,
-                // me:     profile.enabledState.me,
-                // md:     profile.enabledState.md,
-                // ma:     profile.enabledState.ma,
-                // mi:     profile.enabledState.mi,
-                // mn:     profile.enabledState.nm,
-                // ms:     profile.enabledState.ms,
-                // mo:     profile.enabledState.mo,
-                // mt:     profile.enabledState.mt,
-                // ne:     profile.enabledState.ne,
-                // nv:     profile.enabledState.nv,
-                // nh:     profile.enabledState.nh,
-                // nj:     profile.enabledState.nj,
-                // nm:     profile.enabledState.nm,
-                // ny:     profile.enabledState.ny,
-                // nc:     profile.enabledState.nc,
-                // nd:     profile.enabledState.nd,
-                // oh:     profile.enabledState.oh,
-                // ok:     profile.enabledState.ok,
-                // or:     profile.enabledState.or,
-                // pa:     profile.enabledState.pa,
-                // ri:     profile.enabledState.ri,
-                // sc:     profile.enabledState.sc,
-                // sd:     profile.enabledState.sd,
-                // tn:     profile.enabledState.tn,
-                // tx:     profile.enabledState.tx,
-                // ut:     profile.enabledState.ut,
-                // vt:     profile.enabledState.vt,
-                // va:     profile.enabledState.va,
-                // wa:     profile.enabledState.wa,
-                // wv:     profile.enabledState.wv,
-                // wi:     profile.enabledState.wi,
-                // wy:     profile.enabledState.wy                  
+                ak:        profile.enabledState.ak,
+                az:        profile.enabledState.az,
+                ar:        profile.enabledState.ar,
+                ca:        profile.enabledState.ca,
+                co:        profile.enabledState.co,
+                ct:        profile.enabledState.ct,
+                de:        profile.enabledState.de,
+                fl:        profile.enabledState.fl,
+                ga:        profile.enabledState.ga,
+                hi:        profile.enabledState.hi,
+                id:        profile.enabledState.id,
+                il:        profile.enabledState.il,
+                in:        profile.enabledState.in,
+                ia:        profile.enabledState.ia,
+                ks:        profile.enabledState.ks,
+                ky:        profile.enabledState.ky,
+                la:        profile.enabledState.la,
+                me:        profile.enabledState.me,
+                md:        profile.enabledState.md,
+                ma:        profile.enabledState.ma,
+                mi:        profile.enabledState.mi,
+                mn:        profile.enabledState.nm,
+                ms:        profile.enabledState.ms,
+                mo:        profile.enabledState.mo,
+                mt:        profile.enabledState.mt,
+                ne:        profile.enabledState.ne,
+                nv:        profile.enabledState.nv,
+                nh:        profile.enabledState.nh,
+                nj:        profile.enabledState.nj,
+                nm:        profile.enabledState.nm,
+                ny:        profile.enabledState.ny,
+                nc:        profile.enabledState.nc,
+                nd:        profile.enabledState.nd,
+                oh:        profile.enabledState.oh,
+                ok:        profile.enabledState.ok,
+                or:        profile.enabledState.or,
+                pa:        profile.enabledState.pa,
+                ri:        profile.enabledState.ri,
+                sc:        profile.enabledState.sc,
+                sd:        profile.enabledState.sd,
+                tn:        profile.enabledState.tn,
+                tx:        profile.enabledState.tx,
+                ut:        profile.enabledState.ut,
+                vt:        profile.enabledState.vt,
+                va:        profile.enabledState.va,
+                wa:        profile.enabledState.wa,
+                wv:        profile.enabledState.wv,
+                wi:        profile.enabledState.wi,
+                wy:        profile.enabledState.wy                  
               });              
             }
           });           
@@ -193,55 +193,55 @@ export class ProfileComponent implements OnInit {
   get website()   { return this.profileForm.get('website'); }
   get nmls()      { return this.profileForm.get('nmls'); }
   get al()        { return this.profileForm.get('al'); }
-  //get ak()        { return this.profileForm.get('ak'); }
-  // get az()        { return this.profileForm.get('az'); }
-  // get ar()        { return this.profileForm.get('ar'); }
-  // get ca()        { return this.profileForm.get('ca'); }
-  // get co()        { return this.profileForm.get('co'); }
-  // get ct()        { return this.profileForm.get('ct'); }
-  // get de()        { return this.profileForm.get('de'); }
-  // get fl()        { return this.profileForm.get('fl'); }
-  // get ga()        { return this.profileForm.get('ga'); }
-  // get hi()        { return this.profileForm.get('hi'); }
-  // get id()        { return this.profileForm.get('id'); }
-  // get il()        { return this.profileForm.get('il'); }
-  // get in()        { return this.profileForm.get('in'); }
-  // get ia()        { return this.profileForm.get('ia'); }
-  // get ks()        { return this.profileForm.get('ks'); }
-  // get ky()        { return this.profileForm.get('ky'); }
-  // get la()        { return this.profileForm.get('la'); }
-  // get me()        { return this.profileForm.get('me'); }
-  // get md()        { return this.profileForm.get('md'); }
-  // get ma()        { return this.profileForm.get('ma'); }
-  // get mi()        { return this.profileForm.get('mi'); }
-  // get mn()        { return this.profileForm.get('mn'); }
-  // get ms()        { return this.profileForm.get('ms'); }
-  // get mo()        { return this.profileForm.get('mo'); }
-  // get mt()        { return this.profileForm.get('mt'); }
-  // get ne()        { return this.profileForm.get('ne'); }
-  // get nv()        { return this.profileForm.get('nv'); }
-  // get nh()        { return this.profileForm.get('nh'); }
-  // get nj()        { return this.profileForm.get('nj'); }
-  // get nm()        { return this.profileForm.get('nm'); }
-  // get ny()        { return this.profileForm.get('ny'); }
-  // get nc()        { return this.profileForm.get('nc'); }
-  // get nd()        { return this.profileForm.get('nd'); }
-  // get oh()        { return this.profileForm.get('oh'); }
-  // get ok()        { return this.profileForm.get('ok'); }
-  // get or()        { return this.profileForm.get('or'); }
-  // get pa()        { return this.profileForm.get('pa'); }
-  // get ri()        { return this.profileForm.get('ri'); }
-  // get sc()        { return this.profileForm.get('sc'); }
-  // get sd()        { return this.profileForm.get('sd'); }
-  // get tn()        { return this.profileForm.get('tn'); }
-  // get tx()        { return this.profileForm.get('tx'); }
-  // get ut()        { return this.profileForm.get('ut'); }
-  // get vt()        { return this.profileForm.get('vt'); }
-  // get va()        { return this.profileForm.get('va'); }
-  // get wa()        { return this.profileForm.get('wa'); }
-  // get wv()        { return this.profileForm.get('wv'); }
-  // get wi()        { return this.profileForm.get('wi'); }
-  // get wy()        { return this.profileForm.get('wy'); }
+  get ak()        { return this.profileForm.get('ak'); }
+  get az()        { return this.profileForm.get('az'); }
+  get ar()        { return this.profileForm.get('ar'); }
+  get ca()        { return this.profileForm.get('ca'); }
+  get co()        { return this.profileForm.get('co'); }
+  get ct()        { return this.profileForm.get('ct'); }
+  get de()        { return this.profileForm.get('de'); }
+  get fl()        { return this.profileForm.get('fl'); }
+  get ga()        { return this.profileForm.get('ga'); }
+  get hi()        { return this.profileForm.get('hi'); }
+  get id()        { return this.profileForm.get('id'); }
+  get il()        { return this.profileForm.get('il'); }
+  get in()        { return this.profileForm.get('in'); }
+  get ia()        { return this.profileForm.get('ia'); }
+  get ks()        { return this.profileForm.get('ks'); }
+  get ky()        { return this.profileForm.get('ky'); }
+  get la()        { return this.profileForm.get('la'); }
+  get me()        { return this.profileForm.get('me'); }
+  get md()        { return this.profileForm.get('md'); }
+  get ma()        { return this.profileForm.get('ma'); }
+  get mi()        { return this.profileForm.get('mi'); }
+  get mn()        { return this.profileForm.get('mn'); }
+  get ms()        { return this.profileForm.get('ms'); }
+  get mo()        { return this.profileForm.get('mo'); }
+  get mt()        { return this.profileForm.get('mt'); }
+  get ne()        { return this.profileForm.get('ne'); }
+  get nv()        { return this.profileForm.get('nv'); }
+  get nh()        { return this.profileForm.get('nh'); }
+  get nj()        { return this.profileForm.get('nj'); }
+  get nm()        { return this.profileForm.get('nm'); }
+  get ny()        { return this.profileForm.get('ny'); }
+  get nc()        { return this.profileForm.get('nc'); }
+  get nd()        { return this.profileForm.get('nd'); }
+  get oh()        { return this.profileForm.get('oh'); }
+  get ok()        { return this.profileForm.get('ok'); }
+  get or()        { return this.profileForm.get('or'); }
+  get pa()        { return this.profileForm.get('pa'); }
+  get ri()        { return this.profileForm.get('ri'); }
+  get sc()        { return this.profileForm.get('sc'); }
+  get sd()        { return this.profileForm.get('sd'); }
+  get tn()        { return this.profileForm.get('tn'); }
+  get tx()        { return this.profileForm.get('tx'); }
+  get ut()        { return this.profileForm.get('ut'); }
+  get vt()        { return this.profileForm.get('vt'); }
+  get va()        { return this.profileForm.get('va'); }
+  get wa()        { return this.profileForm.get('wa'); }
+  get wv()        { return this.profileForm.get('wv'); }
+  get wi()        { return this.profileForm.get('wi'); }
+  get wy()        { return this.profileForm.get('wy'); }
 
   setProfile(usr) {
     this.submitted = true;
@@ -249,7 +249,55 @@ export class ProfileComponent implements OnInit {
 
     const enabledState: EnabledState = {
       al: this.al.value,
-      //ak: this.al.value
+      ak: this.al.value,
+      az: this.az.value,
+      ar: this.ar.value,
+      ca: this.ca.value,
+      co: this.co.value,
+      ct: this.ct.value,
+      de: this.de.value,
+      fl: this.fl.value,
+      ga: this.ga.value,
+      hi: this.hi.value,
+      id: this.id.value,
+      il: this.il.value,
+      in: this.in.value,
+      ia: this.ia.value,
+      ks: this.ks.value,
+      ky: this.ky.value,
+      la: this.la.value,
+      me: this.me.value,
+      md: this.md.value,
+      ma: this.ma.value,
+      mi: this.mi.value,
+      mn: this.mn.value,
+      ms: this.ms.value,
+      mo: this.mo.value,
+      mt: this.mt.value,
+      ne: this.ne.value,
+      nv: this.nv.value,
+      nh: this.nh.value,
+      nj: this.nj.value,
+      nm: this.nm.value,
+      ny: this.ny.value,
+      nc: this.nc.value,
+      nd: this.nd.value,
+      oh: this.oh.value,
+      ok: this.ok.value,
+      or: this.or.value,
+      pa: this.pa.value,
+      ri: this.ri.value,
+      sc: this.sc.value,
+      sd: this.sd.value,
+      tn: this.tn.value,
+      tx: this.tx.value,
+      ut: this.ut.value,
+      vt: this.vt.value,
+      va: this.va.value,
+      wa: this.wa.value,
+      wv: this.wv.value,
+      wi: this.wi.value,
+      wy: this.wy.value
     };
 
     const user: User = {
