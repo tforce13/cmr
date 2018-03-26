@@ -105,6 +105,8 @@ export class ProfileComponent implements OnInit {
     this.afAuth.authState.pipe(
       tap(user => {
         if (user) {
+          this.photoURL = user.photoURL; 
+          console.log ("photoURL: ", this.photoURL);
           const profiles = this.afs.collection('profiles').doc(user.uid).valueChanges();
           profiles.subscribe ( userProfile => {
             const profile: Profile = userProfile as Profile;
@@ -170,7 +172,7 @@ export class ProfileComponent implements OnInit {
                 wv:        profile.enabledState.wv,
                 wi:        profile.enabledState.wi,
                 wy:        profile.enabledState.wy                  
-              });              
+              });             
             }
           });           
         } else {
@@ -246,9 +248,11 @@ export class ProfileComponent implements OnInit {
   setProfile(usr) {
     console.log ("setProfile");
     this.submitted = true;
-    this.uploadURL.subscribe(str => this.photoURL = str);
-    console.log ("uploadURL.subscribe: ", this.photoURL);
-    const enabledState: EnabledState = {
+    if (this.uploadURL) {
+      this.uploadURL.subscribe(str => this.photoURL = str);
+      console.log ("uploadURL.subscribe: ", this.photoURL);
+    }
+    let enabledState: EnabledState = {
       al: this.al.value,
       ak: this.al.value,
       az: this.az.value,
@@ -301,7 +305,7 @@ export class ProfileComponent implements OnInit {
       wy: this.wy.value
     };
     console.log ("EnabledState: ", enabledState);
-    const user: User = {
+    let user: User = {
       uid:  usr.uid,
       email: usr.email,
       photoURL: this.photoURL,
@@ -309,7 +313,7 @@ export class ProfileComponent implements OnInit {
       profileComplete: true      
     }
     console.log ("User: ", user);
-    const profile: Profile = {
+    let profile: Profile = {
       uid:          usr.uid,
       firstName:    this.firstName.value,
       lastName:     this.lastName.value,
@@ -324,9 +328,10 @@ export class ProfileComponent implements OnInit {
       enabledState: enabledState      
     };
     console.log ('Profile: ', profile);
+    console.log ('User: ', user);
     this.authService.updateUserData(user);
     console.log ("updateUserData");
-    this.profileService.setProfile(profile);
+    this.profileService.setProfileData(profile);
     console.log ("setProfile");
   }  
 
@@ -343,4 +348,134 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  onCheckAllStates() {
+    this.profileForm.setValue({
+      firstName: this.firstName.value,
+      lastName:  this.lastName.value,
+      address1:  this.address1.value,
+      address2:  this.address2.value,
+      city:      this.city.value,
+      state:     this.state.value,
+      zip:       this.zip.value,
+      company:   this.company.value,
+      website:   this.website.value,
+      nmls:      this.nmls.value,
+      al: true,
+      ak: true,
+      az: true,
+      ar: true,
+      ca: true,
+      co: true,
+      ct: true,
+      de: true,
+      fl: true,
+      ga: true,
+      hi: true,
+      id: true,
+      il: true,
+      in: true,
+      ia: true,
+      ks: true,
+      ky: true,
+      la: true,
+      me: true,
+      md: true,
+      ma: true,
+      mi: true,
+      mn: true,
+      ms: true,
+      mo: true,
+      mt: true,
+      ne: true,
+      nv: true,
+      nh: true,
+      nj: true,
+      nm: true,
+      ny: true,
+      nc: true,
+      nd: true,
+      oh: true,
+      ok: true,
+      or: true,
+      pa: true,
+      ri: true,
+      sc: true,
+      sd: true,
+      tn: true,
+      tx: true,
+      ut: true,
+      vt: true,
+      va: true,
+      wa: true,
+      wv: true,
+      wi: true,
+      wy: true                  
+    });             
+
+  }
+
+  onUncheckAllStates() {
+    this.profileForm.setValue({
+      firstName: this.firstName.value,
+      lastName:  this.lastName.value,
+      address1:  this.address1.value,
+      address2:  this.address2.value,
+      city:      this.city.value,
+      state:     this.state.value,
+      zip:       this.zip.value,
+      company:   this.company.value,
+      website:   this.website.value,
+      nmls:      this.nmls.value,
+      al: false,
+      ak: false,
+      az: false,
+      ar: false,
+      ca: false,
+      co: false,
+      ct: false,
+      de: false,
+      fl: false,
+      ga: false,
+      hi: false,
+      id: false,
+      il: false,
+      in: false,
+      ia: false,
+      ks: false,
+      ky: false,
+      la: false,
+      me: false,
+      md: false,
+      ma: false,
+      mi: false,
+      mn: false,
+      ms: false,
+      mo: false,
+      mt: false,
+      ne: false,
+      nv: false,
+      nh: false,
+      nj: false,
+      nm: false,
+      ny: false,
+      nc: false,
+      nd: false,
+      oh: false,
+      ok: false,
+      or: false,
+      pa: false,
+      ri: false,
+      sc: false,
+      sd: false,
+      tn: false,
+      tx: false,
+      ut: false,
+      vt: false,
+      va: false,
+      wa: false,
+      wv: false,
+      wi: false,
+      wy: false                  
+    });         
+  }
 }

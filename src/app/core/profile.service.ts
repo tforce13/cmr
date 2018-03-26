@@ -30,22 +30,25 @@ export class ProfileService {
       });
   }  
 
-  setProfile ( profile: Profile) {
+  setProfileData ( profile: Profile) {
+    console.log ("inside setProfileData");
     const profileRef: AngularFirestoreDocument<Profile> = this.afs.doc(`profiles/${profile.uid}`);
+    console.log ("set profileRef");
     const db = firebase.firestore();
+    console.log ("set db");
     const docRef = db.collection("profiles").doc(profile.uid);
-
+    console.log ("set docRef");
     docRef.get().then(function(doc) {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-            return this.afs.doc(`profiles/${profile.uid}`).update(profile);
-        } else {
-            console.log("No such document!");
-            return profileRef.set(profile);
-          }
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
-    });    
+      if (doc.exists) {
+          console.log("Document data:", doc.data());
+          return profileRef.update(profile);
+      } else {
+          console.log("No such document!");
+          return profileRef.set(profile);
+        }
+      }).catch(function(error) {
+        console.log("Error getting profile from DB:", error);
+    });        
   }
 
 }

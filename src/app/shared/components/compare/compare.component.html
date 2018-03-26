@@ -3,22 +3,19 @@
 <br>
 <p class="h5 text-center mb-4">Compare Rates</p>
 <div id="compare"> 
+    <div class="container flex-center">
     <form>
-        <div class="form-row align-items-center">
-            <div class="col-auto">
-                <label class="sr-only" for="inlineFormInputGroupMD">Zip Code or State</label>
-                <div class="md-form input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text md-addon"></span>
-                    </div>
-                    <input type="text" class="form-control pl-0 rounded-0" id="inlineFormInputGroupMD" placeholder="Enter Zip Code or State">
-                </div>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-outline-primary btn-rounded mb-0">Check Actual Rates</button>
+        <div class="row">
+            <div class="col-md-4">  
+                <label class="sr-only" for="inlineFormInput">Name</label>
+                <input type="text" class="form-control" id="inlineFormInput" placeholder="Zip or State">
+            </div>         
+            <div class="col-md-4">
+                <button class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius>Zip or State<i class="fa fa-location-arrow prefix grey-text ml-1"></i></button>
             </div>
         </div>
     </form>
+    </div>
 </div>
 <div class = "container">
     <div *ngFor="let rate of rates | async">

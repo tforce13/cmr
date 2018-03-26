@@ -269,6 +269,10 @@
                 <label for="wy">Wyoming</label>
             </div>
         </div>
+        <div>
+            <button type="button" class="btn btn-outline-primary btn-rounded waves-effect" (click)="onCheckAllStates()">Check All States</button>
+            <button type="button" class="btn btn-outline-primary btn-rounded waves-effect" (click)="onUncheckAllStates()">Uncheck All States</button>
+        </div>
         <div class="result" *ngIf="uploadURL | async as url; else displayOldAvatar">
             <img src="{{ url }}" height="35" class="rounded-circle" alt="avatar">
             <p>Photo uploaded successfully</p>
