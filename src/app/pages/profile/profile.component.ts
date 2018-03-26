@@ -247,7 +247,7 @@ export class ProfileComponent implements OnInit {
     console.log ("setProfile");
     this.submitted = true;
     this.uploadURL.subscribe(str => this.photoURL = str);
-
+    console.log ("uploadURL.subscribe: ", this.photoURL);
     const enabledState: EnabledState = {
       al: this.al.value,
       ak: this.al.value,
@@ -300,7 +300,7 @@ export class ProfileComponent implements OnInit {
       wi: this.wi.value,
       wy: this.wy.value
     };
-
+    console.log ("EnabledState: ", enabledState);
     const user: User = {
       uid:  usr.uid,
       email: usr.email,
@@ -308,7 +308,7 @@ export class ProfileComponent implements OnInit {
       displayName: usr.displayName,
       profileComplete: true      
     }
-
+    console.log ("User: ", user);
     const profile: Profile = {
       uid:          usr.uid,
       firstName:    this.firstName.value,
@@ -323,11 +323,11 @@ export class ProfileComponent implements OnInit {
       nmls:         this.nmls.value,
       enabledState: enabledState      
     };
-
     console.log ('Profile: ', profile);
-
     this.authService.updateUserData(user);
+    console.log ("updateUserData");
     this.profileService.setProfile(profile);
+    console.log ("setProfile");
   }  
 
   upload(event) {
