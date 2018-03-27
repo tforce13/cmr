@@ -24,6 +24,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RatesComponent } from './pages/rates/rates.component';
 import { FireFormDirective } from './pages/fire-form.directive';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { FireFormDirective } from './pages/fire-form.directive';
     RegisterComponent,
     ProfileComponent,
     RatesComponent,
-    FireFormDirective    
+    FireFormDirective,
   ],
   imports: [
     BrowserModule,

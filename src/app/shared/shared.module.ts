@@ -21,6 +21,8 @@ import { AuthService } from './../core/auth.service';
 import { AuthGuard } from './../core/auth.guard';
 import { NotifyService } from './../core/notify.service';
 import { CompareComponent } from './components/compare/compare.component';
+import { SelectUserPipe } from './pipes/select-user.pipe';
+import { SelectProfilePipe } from './pipes/select-profile.pipe';
 
 @NgModule({
   imports: [
@@ -44,7 +46,9 @@ import { CompareComponent } from './components/compare/compare.component';
     FactsComponent,
     ContactComponent,
     CompareComponent,        
-    FooterComponent
+    FooterComponent,
+    SelectUserPipe,
+    SelectProfilePipe
   ],
   exports: [
     MDBBootstrapModule,
