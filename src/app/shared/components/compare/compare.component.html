@@ -8,58 +8,160 @@
         <div class="row">
             <div class="col-md-4">  
                 <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control" id="inlineFormInput" placeholder="Zip or State">
+                <input type="text" class="form-control" id="inlineFormInput" placeholder="Zip Or State">
             </div>         
             <div class="col-md-4">
-                <button class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius>Zip or State<i class="fa fa-location-arrow prefix grey-text ml-1"></i></button>
+                <button class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius>GetRates</button>
             </div>
         </div>
     </form>
     </div>
 </div>
-<div class = "container">
-    <div *ngFor="let rate of rates | async">
-        <b>Product: 30 Year Fixed Conforming</b><br>
-        <b>Date: {{ rate.createdAt | date:'full'}}</b><br>
-        <b>APR: {{ rate.ThirtyYearFixedConforming.apr | number :'1.3'}}%</b>
-        <b>Rate: {{ rate.ThirtyYearFixedConforming.rate | number :'1.3'}}%</b>
-        <b>Points: {{ rate.ThirtyYearFixedConforming.points | number }}</b>
-        <b>Fees: ${{ rate.ThirtyYearFixedConforming.closing | number }}</b><br>
-        <br>
-        <b>Product: 30 Year Fixed Jumbo</b><br>
-        <b>Date: {{ rate.createdAt | date:'full'}}</b><br>
-        <b>APR: {{ rate.ThirtyYearFixedJumbo.apr | number :'1.3'}}%</b>
-        <b>Rate: {{ rate.ThirtyYearFixedJumbo.rate | number :'1.3'}}%</b>
-        <b>Points: {{ rate.ThirtyYearFixedJumbo.points | number }}</b>
-        <b>Fees: ${{ rate.ThirtyYearFixedJumbo.closing | number }}</b><br>
-        <br>
-        <b>Product: 15 Year Fixed Conforming</b><br>
-        <b>Date: {{ rate.createdAt | date:'full'}}</b><br>
-        <b>APR: {{ rate.FifteenYearFixedConforming.apr | number :'1.3'}}%</b>
-        <b>Rate: {{ rate.FifteenYearFixedConforming.rate | number :'1.3'}}%</b>
-        <b>Points: {{ rate.FifteenYearFixedConforming.points | number }}</b>
-        <b>Fees: ${{ rate.FifteenYearFixedConforming.closing | number }}</b><br>
-        <br>
-        <b>Product: 15 Year Fixed Jumbo</b><br>
-        <b>Date: {{ rate.createdAt | date:'full'}}</b><br>
-        <b>APR: {{ rate.FifteenYearFixedJumbo.apr | number :'1.3'}}%</b>
-        <b>Rate: {{ rate.FifteenYearFixedJumbo.rate | number :'1.3'}}%</b>
-        <b>Points: {{ rate.FifteenYearFixedJumbo.points | number }}</b>
-        <b>Fees: ${{ rate.FifteenYearFixedJumbo.closing | number }}</b><br>
-        <br>
-        <b>Product: 5-1 Year ARM Conforming</b><br>
-        <b>Date: {{ rate.createdAt | date:'full'}}</b><br>
-        <b>APR: {{ rate.FiveToOneYearARMConforming.apr | number :'1.3'}}%</b>
-        <b>Rate: {{ rate.FiveToOneYearARMConforming.rate | number :'1.3'}}%</b>
-        <b>Points: {{ rate.FiveToOneYearARMConforming.points | number }}</b>
-        <b>Fees: ${{ rate.FiveToOneYearARMConforming.closing | number }}</b><br>
-        <br>
-        <b>Product: 5-1 Year ARM Jumbo</b><br>
-        <b>Date: {{ rate.createdAt | date:'full'}}</b><br>
-        <b>APR: {{ rate.FiveToOneYearARMJumbo.apr | number :'1.3'}}%</b>
-        <b>Rate: {{ rate.FiveToOneYearARMJumbo.rate | number :'1.3'}}%</b>
-        <b>Points: {{ rate.FiveToOneYearARMJumbo.points | number }}</b>
-        <b>Fees: ${{ rate.FiveToOneYearARMJumbo.closing | number }}</b><br>
-        <br>
+<div class = "container flex-center">
+    <div class="row">
+        <div *ngFor="let rate of rates | async">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                       <p class="text-white">30 Year Fixed Conforming</p> 
+                    </div>
+                    <div class="card-body">
+                        <span>
+                            {{ rate.createdAt | date:'shortTime'}}
+                            {{ rate.createdAt | date:'shortDate'}}
+                        </span>
+                        <h3 class="card-title">
+                            APR: {{ rate.ThirtyYearFixedConforming.apr | number :'1.3'}}%
+                            ${{ (200 * rate.ThirtyYearFixedConforming.apr) | number :'1.2'}}/mo
+                        </h3>
+                        <p class="card-text">
+                        {{ rate.ThirtyYearFixedConforming.rate | number :'1.3'}}% Rate 
+                        At {{ rate.ThirtyYearFixedConforming.points | number }} pts
+                        ${{ rate.ThirtyYearFixedConforming.closing | number }} Fees
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="text-white">
+                            30 Year Fixed Jumbo
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <span>
+                            {{ rate.createdAt | date:'shortTime'}}
+                            {{ rate.createdAt | date:'shortDate'}}
+                        </span>
+                        <h3 class="card-title">
+                            APR: {{ rate.ThirtyYearFixedJumbo.apr | number :'1.3'}}%
+                            ${{ (200 * rate.ThirtyYearFixedJumbo.apr) | number :'1.2'}}/mo
+                        </h3>
+                        <p class="card-text">
+                        {{ rate.ThirtyYearFixedJumbo.rate | number :'1.3'}}% Rate
+                        At {{ rate.ThirtyYearFixedJumbo.points | number }} pts
+                        ${{ rate.ThirtyYearFixedJumbo.closing | number }} Fees
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="text-white">
+                            15 Year Fixed Conforming
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <span>
+                            {{ rate.createdAt | date:'shortTime'}}
+                            {{ rate.createdAt | date:'shortDate'}}
+                        </span>
+                        <h3 class="card-title">
+                            APR: {{ rate.FifteenYearFixedConforming.apr | number :'1.3'}}%
+                            ${{ (200 * rate.FifteenYearFixedConforming.apr) | number :'1.2'}}/mo
+                        </h3>
+                        <p class="card-text">
+                            {{ rate.FifteenYearFixedConforming.rate | number :'1.3'}}% Rate
+                            At {{ rate.FifteenYearFixedConforming.points | number }} pts
+                            ${{ rate.FifteenYearFixedConforming.closing | number }} Fees
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="text-white">
+                            15 Year Fixed Jumbo
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <span>
+                            {{ rate.createdAt | date:'shortTime'}}
+                            {{ rate.createdAt | date:'shortDate'}}
+                        </span>
+                        <h3 class="card-title">
+                            APR: {{ rate.FifteenYearFixedJumbo.apr | number :'1.3'}}%
+                            ${{ (200 * rate.FifteenYearFixedJumbo.apr) | number :'1.2'}}/mo
+                        </h3>
+                        <p class="card-text">
+                            {{ rate.FifteenYearFixedJumbo.rate | number :'1.3'}}% Rate
+                            At {{ rate.FifteenYearFixedJumbo.points | number }} pts
+                            ${{ rate.FifteenYearFixedJumbo.closing | number }} Fees
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="text-white">
+                            5-1 Year ARM Conforming
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <span>
+                            {{ rate.createdAt | date:'shortTime'}}
+                            {{ rate.createdAt | date:'shortDate'}}
+                        </span>
+                        <h3 class="card-title">
+                            APR: {{ rate.FiveToOneYearARMConforming.apr | number :'1.3'}}%
+                            ${{ (200 * rate.FiveToOneYearARMConforming.apr) | number :'1.2'}}/mo
+                        </h3>
+                        <p class="card-text">
+                            {{ rate.FiveToOneYearARMConforming.rate | number :'1.3'}}% Rate
+                            At {{ rate.FiveToOneYearARMConforming.points | number }} pts
+                            ${{ rate.FiveToOneYearARMConforming.closing | number }} Fees
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="text-white">
+                            5-1 Year ARM Jumbo
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <span>
+                            {{ rate.createdAt | date:'shortTime'}}
+                            {{ rate.createdAt | date:'shortDate'}}
+                        </span>
+                        <h3 class="card-title">
+                            APR: {{ rate.FiveToOneYearARMJumbo.apr | number :'1.3'}}%
+                            ${{ (200 * rate.FiveToOneYearARMJumbo.apr) | number :'1.2'}}/mo
+                        </h3>
+                        <p class="card-text">
+                            {{ rate.FiveToOneYearARMJumbo.rate | number :'1.3'}}% Rate
+                            At {{ rate.FiveToOneYearARMJumbo.points | number }} pts
+                            ${{ rate.FiveToOneYearARMJumbo.closing | number }} Fees
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
