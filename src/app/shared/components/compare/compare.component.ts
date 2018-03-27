@@ -35,5 +35,7 @@ export class CompareComponent implements OnInit {
     //   product = JSON.stringify(value[0]);
     // });
   }
-
+  onClickApplyNow(uid:string, product:string) {
+    console.log ('**** uid: ', uid, ' product: ', product);
+  }
 }
