@@ -13,9 +13,6 @@ import { Profile } from './../../../models/profile';
 
 export class CompareComponent implements OnInit {
  
-  list: string;
-  product: string;
-  value: any;
   rates: Observable<any[]>;
   users: Observable<any[]>;
   profiles: Observable<any[]>;
@@ -26,13 +23,17 @@ export class CompareComponent implements OnInit {
   }
 
   ngOnInit() {
+    let list: string;
+    let product: string;
+    let value: any;
+
     this.rates = this.afs.collection('rates').valueChanges();
-    this.rates.subscribe(data => {
-      this.list = JSON.stringify(data);
-      console.log('data', JSON.stringify(data));
-      this.value = data;
-      this.product = JSON.stringify(this.value[0]);
-   });
+    // this.rates.subscribe(data => {
+    //   list = JSON.stringify(data);
+    //   console.log('data', JSON.stringify(data));
+    //   value = data;
+    //   product = JSON.stringify(value[0]);
+    // });
   }
 
 }
