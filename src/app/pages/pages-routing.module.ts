@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RatesComponent } from './rates/rates.component';
+import { ApplicationComponent } from './application/application.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   }, {
     path: 'rates',
     component: RatesComponent,    
+  }, {
+    path: 'application',
+    component: ApplicationComponent,    
   }, {
     path: '',
     redirectTo: 'login',

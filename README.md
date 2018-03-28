@@ -73,6 +73,7 @@ Version 5.2.3
     ng generate service core/validation -m core
     ng generate service core/notify -m core
     ng generate service core/profile -m core
+    ng generate service core/application -m core
     ng generate guard core/auth -m core
     ng generate module pages -m app
     ng generate module pages/pages-routing -m pages/pages
@@ -82,6 +83,7 @@ Version 5.2.3
     ng generate component pages/register -m pages
     ng generate component pages/profile -m pages
     ng generate component pages/rates -m pages
+    ng generate component pages/application -m pages
     ng generate module shared -m app
     ng generate component shared/components/header -m shared
     ng generate component shared/components/navbar -m shared
@@ -91,6 +93,9 @@ Version 5.2.3
     ng generate component shared/components/compare -m shared    
     ng generate component shared/components/contact -m shared
     ng generate component shared/components/footer -m shared
+    ng generate pipe shared/pipes/SelectUser -m shared
+    ng generate pipe shared/pipes/SelectProfile -m shared
+    ng generate pipe shared/pipes/SelectRate -m shared
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 

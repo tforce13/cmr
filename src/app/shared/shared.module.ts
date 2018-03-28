@@ -23,6 +23,7 @@ import { NotifyService } from './../core/notify.service';
 import { CompareComponent } from './components/compare/compare.component';
 import { SelectUserPipe } from './pipes/select-user.pipe';
 import { SelectProfilePipe } from './pipes/select-profile.pipe';
+import { SelectRatePipe } from './pipes/select-rate.pipe';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { SelectProfilePipe } from './pipes/select-profile.pipe';
     CompareComponent,        
     FooterComponent,
     SelectUserPipe,
-    SelectProfilePipe
+    SelectProfilePipe,
+    SelectRatePipe
   ],
   exports: [
     MDBBootstrapModule,
@@ -66,7 +68,9 @@ import { SelectProfilePipe } from './pipes/select-profile.pipe';
     FactsComponent,
     ContactComponent,
     CompareComponent,            
-    FooterComponent
+    FooterComponent,
+    SelectProfilePipe,
+    SelectUserPipe
   ],
   providers: [
     NotificationService,

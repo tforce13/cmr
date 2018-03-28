@@ -23,6 +23,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RatesComponent } from './pages/rates/rates.component';
 import { FireFormDirective } from './pages/fire-form.directive';
+import { ApplicationComponent } from './pages/application/application.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { FireFormDirective } from './pages/fire-form.directive';
     ProfileComponent,
     RatesComponent,
     FireFormDirective,
+    ApplicationComponent
   ],
   imports: [
     BrowserModule,

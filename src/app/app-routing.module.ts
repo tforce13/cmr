@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RatesComponent } from './pages/rates/rates.component';
+import { ApplicationComponent } from './pages/application/application.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'rates', component: RatesComponent },
+  { path: 'application', component: ApplicationComponent},
 //  {
 //    path: 'pages',
 //    loadChildren: './pages/pages.module#PagesModule'

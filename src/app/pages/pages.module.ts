@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RatesComponent } from './rates/rates.component';
 import { FireFormDirective } from './fire-form.directive';
+import { ApplicationComponent } from './application/application.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { FireFormDirective } from './fire-form.directive';
     SharedModule,
   ],
   declarations: [
-    PagesComponent
+    PagesComponent,
+    ApplicationComponent
   ],
   exports: [
     PagesComponent

@@ -7,12 +7,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ValidationService } from './validation.service';
 import { ProfileService } from './profile.service';
+import { ApplicationService } from './application.service';
 
 @NgModule({
   imports: [
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
-  providers: [AuthService, NotifyService, ValidationService, ProfileService],
+  providers: [AuthService, NotifyService, ValidationService, ProfileService, ApplicationService],
 })
 export class CoreModule { }
