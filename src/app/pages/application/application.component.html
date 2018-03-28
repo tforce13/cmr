@@ -4,7 +4,7 @@
 <br>
 <p class="h5 text-center mb-4">Contact Loan Officer</p>
 <div class = "container">
-  <!--form [formGroup]="applicationForm" >
+  <form [formGroup]="applicationForm" *ngIf="!contacted" (ngSubmit)="setContact(uid)">
         <div class="md-form">
             <label for="firstName">First Name</label>
             <input type="text" formControlName="firstName"  mdbActive>
@@ -35,36 +35,41 @@
         </div>
         <div class="md-form">
             <label for="email">email</label>
-            <input type="email" formControlName="zip" mdbActive>
-         </div>
+            <input type="email" formControlName="email" mdbActive>
+        </div>
          <div class="md-form">
             <label for="phone">Phone</label>
             <input type="text" formControlName="phone" mdbActive>
-        </div>
-        <div class="md-form">
-            <label for="product">Product</label>
-            <input type="text" formControlName="product" mdbActive>
         </div>
         <div class="md-form">
             <label for="message">Message</label>
            <input type="text" formControlName="message" mdbActive>
         </div>
         <div class="text-center">
-            <button class="btn btn-outline-primary btn-rounded waves-effect" (click)="onContact()">Contact</button>
-        </div>        
-    </form-->  
+            <button type="submit" class="btn btn-outline-primary btn-rounded waves-effect" [disabled]="contacted">Submit</button>
+        </div>
+    </form>  
+
+  <div *ngIf="contacted">
+    <p>Congratulations, Thank you for completing your loan information. The loan officer will contact you at thieir earliest convenience.</p>      
+  </div>
+  <div *ngIf="contacted" class="text-center">
+    <button type="button" class="btn btn-outline-primary btn-rounded" mdbRippleRadius (click)="onContinue()">Continue</button>
+  </div>
+  
+  <div *ngIf="!contacted">
+  <ng-container *ngIf="users | selectUser:uid | async as user">
+    <div>
+      <img src="{{ user.photoURL }}" height="150" class="rounded-circle" alt="avatar">
+    </div>
+  </ng-container>      
+  <ng-container *ngIf="profiles | selectProfile:uid | async as profile">
+    <div>
+      {{profile.firstName}} {{profile.lastName}}, {{profile.company}} NMLS: {{profile.nmls}}
+    </div>
+  </ng-container>
   <div class="row">
     <div *ngFor="let rate of rates | async">
-      <ng-container *ngIf="users | selectUser:rate.userId | async as user">
-        <div>
-          <img src="{{ user.photoURL }}" height="150" class="rounded-circle" alt="avatar">
-        </div>
-      </ng-container>      
-      <ng-container *ngIf="profiles | selectProfile:rate.userId | async as profile">
-        <div>
-          {{profile.firstName}} {{profile.lastName}}, {{profile.company}} NMLS: {{profile.nmls}}
-        </div>
-      </ng-container>
       <div class="col">
         <div class="card">
           <div class="card-header">
@@ -199,4 +204,5 @@
       </div>                           
     </div>
   </div>
+</div>
 </div>
