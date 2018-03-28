@@ -22,8 +22,7 @@ import { ApplicationComponent } from './application/application.component';
     SharedModule,
   ],
   declarations: [
-    PagesComponent,
-    ApplicationComponent
+    PagesComponent
   ],
   exports: [
     PagesComponent
