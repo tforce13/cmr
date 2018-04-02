@@ -1,7 +1,7 @@
 export interface Application {
     uid: string;
-    firstName?:string;
-    lastName?:string;
+    firstName?: string;
+    lastName?: string;
     address1?: string;
     address2?: string;
     city?: string;
@@ -11,5 +11,5 @@ export interface Application {
     phone?: string;
     product?: string;
     message?: string;
+    createdAt?: string;
   }
-  

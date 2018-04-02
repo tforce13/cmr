@@ -6,8 +6,8 @@
         <p class="h5 text-center mb-4">Contact Us</p>
         <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
-            <input type="text" id="form3" class="form-control" mdbActive>
-            <label for="form3">Your name</label>
+            <input type="text" id="name" class="form-control" mdbActive>
+            <label for="name">Your name</label>
         </div>
         <div class="md-form">
             <i class="fa fa-envelope prefix grey-text"></i>
@@ -25,7 +25,7 @@
             <label for="form8">Your message</label>
         </div>
         <div class="text-center">
-            <button class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius>Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+            <button (click)="onSubmit()" class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius >Send <i class="fa fa-paper-plane-o ml-1"></i></button>
         </div>
     </form>
   </div>

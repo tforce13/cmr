@@ -30,7 +30,7 @@ export class RatesComponent implements OnInit {
   path: string;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth
   ) {}
@@ -46,14 +46,14 @@ export class RatesComponent implements OnInit {
 
           this.path = `rates/${userId}_${docId}`;
 
-          this.rateForm.patchValue( { userId } )
+          this.rateForm.patchValue( { userId } );
 
         } else {
-          alert('not logged in')
+          alert('not logged in');
         }
       })
     )
-    .subscribe()
+    .subscribe();
 
     const fields: any = {};
 
@@ -61,9 +61,9 @@ export class RatesComponent implements OnInit {
       fields[p] = this.buildProduct();
     }
 
-    fields['userId'] = ['']
-    fields['createdAt'] = [new Date().getTime()]
-    this.rateForm = this.fb.group(fields)
+    fields['userId'] = [''];
+    fields['createdAt'] = [new Date().getTime()];
+    this.rateForm = this.fb.group(fields);
 
   }
 

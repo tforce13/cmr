@@ -42,22 +42,21 @@ export class FireFormDirective implements AfterViewInit {
     this._collectionRef.valueChanges().pipe(
       take(1),
       tap(docs => {
-        const latest = docs[0]
-        console.log(latest)
+        const latest = docs[0];
+        console.log(latest);
         if (latest) {
-          delete latest.createdAt
+          delete latest.createdAt;
           this.formGroup.patchValue(latest);
           this.formGroup.markAsPristine();
         }
       })
     )
-    .subscribe()
+    .subscribe();
   }
 
   // Updates form non-destructively
   async setDoc() {
-    await this._docRef.set(this.formGroup.value, { merge: true })
+    await this._docRef.set(this.formGroup.value, { merge: true });
     this.formGroup.markAsPristine();
   }
-
 }

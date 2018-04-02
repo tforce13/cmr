@@ -12,11 +12,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./application.component.scss']
 })
 export class ApplicationComponent implements OnInit {
-  uid: string; 
+  uid: string;
   product: string;
   rates: Observable<any[]>;
   users: Observable<any[]>;
-  profiles: Observable<any[]>;  
+  profiles: Observable<any[]>;
   applicationForm: FormGroup;
   contacted: boolean;
 
@@ -50,7 +50,7 @@ export class ApplicationComponent implements OnInit {
        email:     ['', [ Validators.required ] ],
        phone:     ['', [ Validators.required ] ],
        message:   ['', [ Validators.required ] ]
-     });    
+     });
 
   }
 
@@ -79,7 +79,8 @@ export class ApplicationComponent implements OnInit {
       email:        this.email.value,
       phone:        this.phone.value,
       product:      this.product,
-      message:      this.message.value
+      message:      this.message.value,
+      createdAt:    new Date().getTime().toString()
     };
     this.applicationService.setApplicationData(application);
     this.contacted = true;
