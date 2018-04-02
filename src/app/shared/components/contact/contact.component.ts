@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from "angularfire2/firestore";
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Contact } from './../../../models/contact';
+import { ContactService } from './../../../core/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,15 +15,21 @@ export class ContactComponent implements OnInit {
   message: string = '';
   submitted: boolean = false;
 
-  constructor(private afs: AngularFirestore
+  constructor(private contatctService: ContactService
               ) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log ('onSubmit');
-    alert (this.name);
+    let contact: Contact = {
+      name: 'William Best',
+      email: 'wpbest@gmail.com',
+      subject: 'Loan Officer',
+      message: 'How do I sign up',
+      createdAt: new Date().getTime().toString()
+    };
+    this.contatctService.setContact(contact);
     this.submitted = true;
   }
 }

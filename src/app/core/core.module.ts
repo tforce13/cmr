@@ -8,12 +8,13 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ValidationService } from './validation.service';
 import { ProfileService } from './profile.service';
 import { ApplicationService } from './application.service';
+import { ContactService } from './contact.service';
 
 @NgModule({
   imports: [
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
-  providers: [AuthService, NotifyService, ValidationService, ProfileService, ApplicationService],
+  providers: [AuthService, NotifyService, ValidationService, ProfileService, ApplicationService, ContactService],
 })
 export class CoreModule { }

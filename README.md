@@ -74,6 +74,7 @@ Version 5.2.3
     ng generate service core/notify -m core
     ng generate service core/profile -m core
     ng generate service core/application -m core
+    ng generate service core/contact -m core
     ng generate guard core/auth -m core
     ng generate module pages -m app
     ng generate module pages/pages-routing -m pages/pages
@@ -90,7 +91,7 @@ Version 5.2.3
     ng generate component shared/components/action -m shared
     ng generate component shared/components/featured -m shared
     ng generate component shared/components/facts -m shared
-    ng generate component shared/components/compare -m shared    
+    ng generate component shared/components/compare -m shared
     ng generate component shared/components/contact -m shared
     ng generate component shared/components/footer -m shared
     ng generate pipe shared/pipes/SelectUser -m shared
