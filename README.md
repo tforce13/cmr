@@ -12,6 +12,9 @@ Firebase CLI <https://firebase.google.com/docs/cli/>
 AnguarFire2 <https://github.com/angular/angularfire2>  
 AngularFirebase <https://angularfirebase.com/>  
 RxJS <http://reactivex.io/rxjs/>  
+
+# Interesting Upcoming Technolory
+
 Ionic capacitor  
     Blog <https://blog.ionicframework.com/announcing-capacitor-1-0-0-alpha/>  
     Documentaion <https://capacitor.ionicframework.com/>  
@@ -53,6 +56,14 @@ Configure the git helper tool for osx-keychain to store your login credentials a
 ## .gitignore
     # misc
     package-lock.json
+    /functions/pagage-lock.json
+
+    # dependencies
+    /functions/node_modules
+
+    # compiled output
+    /functions/lib
+
 
 # Install Node
 
@@ -157,15 +168,11 @@ David East GitHub: <https://github.com/davideast>
 
 # Jeff Delaney (AngularFirebase)
 
-### Title: Consultant, Google Developer Expetrts (Firebase GDE)
-
-### email: hello@jeffdelaney.me
-
-### gmail: delaneyphx@gmail.com
-
-### twitter: @Jeffdelaney23
-
-### github: codediodeio
+    Title: Consultant, Google Developer Expetrts (Firebase GDE)
+    email: hello@jeffdelaney.me
+    gmail: delaneyphx@gmail.com
+    twitter: @Jeffdelaney23
+    github: codediodeio
 
 # Example Angular 5 PWA (Progressive Web App) Apps
 
@@ -287,6 +294,13 @@ export class AppRoutingModule { }
 # Angular Material Design for Bootstrap
 
 Version 5.2.3
+
+# Firebase Functions
+
+    firebase init functions
+    cd functions
+    npm install node-fetch --save
+    ng build --dev && firebase serve --only functions, hosting
 
 ## Setup the Build Environment Files
 

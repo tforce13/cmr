@@ -5,9 +5,11 @@
 /dist-server
 /tmp
 /out-tsc
+/functions/lib
 
 # dependencies
 /node_modules
+/functions/node_modules
 
 # IDEs and editors
 /.idea
@@ -35,6 +37,7 @@ yarn-error.log
 testem.log
 /typings
 package-lock.json
+/functions/package-lock.json
 
 # e2e
 /e2e/*.js
