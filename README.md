@@ -45,6 +45,10 @@ Configure the git helper tool for osx-keychain to store your login credentials a
 
      git config --global user.email "bbest@loanbright.com"
 
+## .gitignore
+    # misc
+    package-lock.json
+
 # Install Node
 
 ## Prerequisites
@@ -154,11 +158,42 @@ AngularFirebase GitHub: <https://github.com/AngularFirebase>
 
 ## Angular 5 Service Worker
 
-Example Angular 5 PWA (Progressive Web App) Apps
+# Example Angular 5 PWA (Progressive Web App) Apps
 
 Hacker News PWA with an Angular 5 Service Worker: <https://github.com/codediodeio/hnpwa-angular5>  
 Angular Progressive Web App using Workbox 2.0 or NGSW 5: <https://github.com/webmaxru/pwatter>  
 Angular Firebase Progressive Web App Starter <https://github.com/codediodeio/angular-firestarter>
+
+# Progressive Web Applications
+
+Stephen Fluin's ngsw-config.json
+<https://github.com/StephenFluin/fluin.io/blob/master/src/ngsw-config.json>
+
+Minko Gechev's ngsw-config.json
+<https://github.com/mgechev/angular-seed/blob/master/src/client/ngsw-config.json>
+
+Maxim Salnikov's ngsw-config.json
+<https://github.com/webmaxru/ngPwa/blob/master/src/ngsw-config.json>
+
+Austin McDaniel's ngsw-config.json
+<https://github.com/amcdnl/material.angular.io/blob/master/src/ngsw-config.json>
+
+# Image Optimization
+
+<https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization>
+
+# http-server
+
+The live-server project’s website can be found at <https://github.com/indexzero/http-server>. To install http-server globally on your system just use the following command:
+
+    npm install http-server -g
+
+Now you can start http-server right inside the dist folder:
+
+    cd dist
+    http-server -c-1
+
+This spins up a Node.js httpd which serves the files in your directory as static files accessible from: <http://localhost:8080>
 
 # Install AngularFire and Firebase
 
