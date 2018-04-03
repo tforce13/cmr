@@ -131,9 +131,13 @@ Start Visual Studio Code in command line
 
 ## AngularAir
 
-### website: https://angularair.com/
+### website: <https://angularair.com/>
 
-### YouTube: https://www.youtube.com/c/AngularAirPodcast
+### YouTube: <https://www.youtube.com/c/AngularAirPodcast>
+
+# YouTube
+
+## Demos With Angular <https://www.youtube.com/channel/UCYFd7Qy93YP7gPERnxP545A>
 
 # Sample GitHub Repositories
 
@@ -144,7 +148,8 @@ Angular + Firebase Progressive Web App Starter <https://github.com/codediodeio/a
 
 Jeff Delaney GitHub: <https://github.com/codediodeio>  
 AngularFirebase GitHub: <https://github.com/AngularFirebase>  
-Stephen Fluin GitHub <https://github.com/StephenFluin>  
+Stephen Fluin GitHub: <https://github.com/StephenFluin>  
+David East GitHub: <https://github.com/davideast>
 
 # Jeff Delaney (AngularFirebase)
 
