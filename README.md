@@ -22,8 +22,8 @@ Ionic capacitor
 
 # Relative Articles
 
-    Node.JS + SendGrid + TypeScript <http://brianflove.com/2017/03/15/node-sendgrid-typescript/>
-    
+Node.JS + SendGrid + TypeScript <http://brianflove.com/2017/03/15/node-sendgrid-typescript/>  
+
 # git
 
 ## Clear git credentials
