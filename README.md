@@ -20,6 +20,10 @@ Ionic capacitor
     Documentaion <https://capacitor.ionicframework.com/>  
     GitHub: <https://github.com/ionic-team/capacitor>  
 
+# Relative Articles
+
+    Node.JS + SendGrid + TypeScript <http://brianflove.com/2017/03/15/node-sendgrid-typescript/>
+    
 # git
 
 ## Clear git credentials
@@ -300,6 +304,8 @@ Version 5.2.3
     firebase init functions
     cd functions
     npm install node-fetch --save
+    npm install cors --save
+    npm install @sendgrid/mail --save
     ng build --dev && firebase serve --only functions, hosting
 
 ## Setup the Build Environment Files
