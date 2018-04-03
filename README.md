@@ -12,7 +12,10 @@ Firebase CLI <https://firebase.google.com/docs/cli/>
 AnguarFire2 <https://github.com/angular/angularfire2>  
 AngularFirebase <https://angularfirebase.com/>  
 RxJS <http://reactivex.io/rxjs/>  
-capacitor <https://blog.ionicframework.com/announcing-capacitor-1-0-0-alpha/>  
+Ionic capacitor  
+    Blog <https://blog.ionicframework.com/announcing-capacitor-1-0-0-alpha/>  
+    Documentaion <https://capacitor.ionicframework.com/>  
+    GitHub: <https://github.com/ionic-team/capacitor>  
 
 # git
 
