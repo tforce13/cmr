@@ -1,13 +1,194 @@
 # cmr
 Compare Mortgage Rates
 
-# Install Angular CLI
+# Documentation
 
-    npm install -g @angular/cli
-    
+Node.js <https://nodejs.org/en/docs/>  
+Angular <https://angular.io/>  
+Angular CLI <https://cli.angular.io/>  
+Material Design for Bootstrap 4 <https://mdbootstrap.com/>  
+Firebase <https://firebase.google.com/docs/>  
+Firebase CLI <https://firebase.google.com/docs/cli/>  
+AnguarFire2 <https://github.com/angular/angularfire2>  
+AngularFirebase <https://angularfirebase.com/>  
+
+# git
+
+## Clear git credentials
+
+### Windows
+
+    git credential-manager uninstall
+
+### macOS
+
+    git credential-osxkeychain erase
+    host=github.com
+    protocol=https
+    <press return>
+
+#### Configuration
+
+Configure the git helper tool for osx-keychain to store your login credentials associated with the entire path of the repository rather than just the domain which is the default.
+
+    git config --global --edit
+
+    [credential]
+      helper = osxkeychain
+      useHttpPath = true
+
+## Set user name
+
+     git config --global user.name "sbbnet"
+
+## Set email address
+
+     git config --global user.email "bbest@loanbright.com"
+
+# Install Node
+
+## Prerequisites
+
+### Windows
+
+    Chocolatey is a package manager for Windows (like apt-get or yum but for Windows). It was designed to be a decentralized framework for quickly installing applications and tools that you need. Install with PowerShell.exe: Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+#### Install via Chocolatey
+
+    choco upgrade chocolatey
+    choco install nodejs.install
+
+#### Update via Chocolatey
+
+    choco upgrade chocolatey
+    choco upgrade nodejs.install
+
+### macOS
+
+    XCode: Apple’s development software is used to build Mac and iOS apps It is free and you can find it in the Apple App Store.
+    Homebrew : Homebrew is a package manager for the Mac. Open Terminal and type: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#### Install via HomeBrew
+
+Make sure Homebrew has the latest version of the Node package. In Terminal type:
+
+    brew update
+    brew install node
+
+#### Update via HomeBrew
+
+    brew update
+    brew upgrade node
+
+## Dislay Node Version
+
+    node -v
+    v9.10.1
+
+    npm -v
+    5.7.1
+
+# Install global packages Angular, TypeScript, Firebase
+
+    npm install -g @angular/cli  
+    npm install -g typescript  
+    npm install -g firebase-tool  
+
+# Display Angular CLI Version and Dependancies
+
+    ng version
+
+# Typescript Version
+
+    tsc -v
+    Version 2.7.2
+
+# Firebase CLI Version
+
+    firebase -V
+    3.17.4    
+
+# Visual Studio Code
+
+Start Visual Studio Code in command line
+
+    code .
+
+    use Ctrl + ] to indent
+
+    use Ctrl + K, Ctrl + F to format selected cod
+
+## Integrated Terminal
+
+    use Ctrl + ' to open integrated terminal
+
+# Pod Casts
+
+## AngularAir
+
+### website: https://angularair.com/
+
+### YouTube: https://www.youtube.com/c/AngularAirPodcast
+
+# Sample GitHub Repositories
+
+FireStore Fetch Items App <https://github.com/Belchenkov/angular5-FireStore>  
+Angular + Firebase Progressive Web App Starter <https://github.com/codediodeio/angular-firestarter>  
+
+# Developers to Follow
+
+Jeff Delaney GitHub: <https://github.com/codediodeio>  
+AngularFirebase GitHub: <https://github.com/AngularFirebase>  
+
+## Jeff Delaney (AngularFirebase)
+
+### Title: Consultant, Google Developer Expetrts (Firebase GDE)
+
+### email: hello@jeffdelaney.me
+
+### gmail: delaneyphx@gmail.com
+
+### twitter: @Jeffdelaney23
+
+### github: codediodeio
+
+## Angular 5 Service Worker
+
+Example Angular 5 PWA (Progressive Web App) Apps
+
+Hacker News PWA with an Angular 5 Service Worker: <https://github.com/codediodeio/hnpwa-angular5>  
+Angular Progressive Web App using Workbox 2.0 or NGSW 5: <https://github.com/webmaxru/pwatter>  
+Angular Firebase Progressive Web App Starter <https://github.com/codediodeio/angular-firestarter>
+
 # Install AngularFire and Firebase
 
     npm install angularfire2 firebase --save
+
+# Firebase Authentication
+
+## Facebook
+
+    App ID: 1887679091274433
+    App Secret: 9ecc7527854d15d2584a65a8c0515121
+
+## Twitter
+
+    App ID: n03VXxOl27PHsobwaQHvtVHNQ
+    App Secret: cDcrhJgCFSyw0QlpwBglSaRgCaVAptgKvqoS95irsogkvMcvZR
+
+## GitHub
+
+    Client ID: 27f3baa51926bfcf5eb1
+    Client Secret: 9dc54caaadcc5df78a03c037dc52c25c776cd844
+
+# Geocoding API key
+
+     AIzaSyBtpQ6TfOFo3FP-DoZib_iKoaN1ddOThn4
+
+# SendGrid API Key
+
+    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
+
 
 # Add Firebase Credentials
 
@@ -62,6 +243,168 @@ export class AppRoutingModule { }
 # Angular Material Design for Bootstrap
 
 Version 5.2.3
+
+## Setup the Build Environment Files
+
+Create three environments dev, test, and prod by creating the files:
+
+Rename the exsisting file environment.ts to environment.dev.ts,
+
+environment.dev.ts  
+environment.prod.ts  
+environment.test.ts
+
+in the ./src/environments folder
+
+Add your credentials to each of the envirnments.
+
+    export const environment = {
+      production: false,
+      firebaseConfig: {
+        apiKey: '<your-key>',
+        authDomain: '<your-project-authdomain>',
+        databaseURL: '<your-database-URL>',
+        projectId: '<your-project-id>',
+        storageBucket: '<your-storage-bucket>',
+        messagingSenderId: '<your-messaging-sender-id>'
+      }
+    };
+
+In the file ./src/app/app.module.ts, add the AngularFire2 to the app.
+
+    import { AngularFireModule } from 'angularfire2';
+    import { AngularFireDatabaseModule } from 'angularfire2/database';
+    import { AngularFireAuthModule } from 'angularfire2/auth';
+    import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+    import { environment } from '../environments/environment.dev';
+    export const firebaseConfig = environment.firebaseConfig;
+
+    // ...omitted
+
+    @NgModule({
+      imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
+        AngularFirestoreModule
+      ],
+
+    // ...omitted
+
+    })
+
+## Map the Build Environment Files
+
+The mapping used to determine which environment file is used can be found in .angular-cli.json:
+
+In the section
+
+    "apps": 
+      "environmentSource": "environments/environment.dev.ts" "environments": {
+        "dev": "environments/environment.dev.ts",
+        "test": "environments/environment.test.ts",
+        "prod": "environments/environment.prod.ts"
+      },
+
+## Build Targets and Environments
+
+    ng build --target=development --environment=dev  
+    ng build --dev --env=dev  
+    ng build --dev
+    ng build
+
+    ng build --target=production --environment=test  
+    ng build --prod --env=test  
+
+    ng build --target=production --environment=prod  
+    ng build --prod --env=prod  
+    ng build --prod
+
+You can also add your own env files other than dev and prod by doing the following:  
+Create a src/environments/environment.NAME.ts  
+add { "NAME": 'src/environments/environment.NAME.ts' } to the apps[0].environments object in .angular-cli.json
+use them via the --env=NAME flag on the build/serve commands.
+
+--dev vs --prod builds  
+Both --dev/--target=development and --prod/--target=production are 'meta' flags, that set other flags. If you do not specify either you will get the --dev defaults.
+
+Flag               --dev  --prod  
+--aot              false  true  
+--environment      dev    prod  
+--output-hashing   media  all  
+--sourcemaps       true   false  
+--extract-css      false  true  
+--named-chunks     true   false  
+--build-optimizer  false  true with AOT and Angular 5  
+
+--prod also sets the following non-flaggable settings:
+
+Adds service worker if configured in .angular-cli.json.  
+Replaces process.env.NODE_ENV in modules with the production value (this is needed for some libraries, like react).  
+Runs UglifyJS on the code.
+
+## Deployment to Firebase Hosting
+
+    firebase login
+
+    firebase init
+
+Choose hosting.  
+Select a default Firebase project for this directory.   
+Change public folder to dist when asked (it defaults to public).  
+Configure as single page app? Yes.  
+Overwrite your index.html file? No.
+
+## Build for Production
+
+    ng build --prod
+
+## Deploy
+
+firebase use --add Select Development alias dev  
+firebase use --add Select Test alias test  
+firebase use --add Select Production alias prod  
+
+firebase deploy -P dev  
+firebase deploy -P test   
+firebase deploy -P prod  
+
+## Debugging Environments in Visual Studio Code
+
+    ng serve -e dev
+    ng serve -e test
+    ng serve -e prod
+
+## Hosting
+
+### Development
+
+url: <https://CompareMortgageRates.com>
+
+### Test
+
+url: <not yet setup>
+
+### Production
+
+url: <not yet setup>
+
+
+## GitHub Account
+
+username: sbbnet
+email: bbest@loanbright.com
+
+
+# iStock
+
+customer number: 17618252  
+name: Russell Straud  
+company: SBBnet   
+
 
 # Angular CLI Scaffolding
 
