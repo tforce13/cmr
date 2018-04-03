@@ -11,6 +11,7 @@ Firebase <https://firebase.google.com/docs/>
 Firebase CLI <https://firebase.google.com/docs/cli/>  
 AnguarFire2 <https://github.com/angular/angularfire2>  
 AngularFirebase <https://angularfirebase.com/>  
+RxJS <http://reactivex.io/rxjs/>  
 
 # git
 
@@ -143,8 +144,9 @@ Angular + Firebase Progressive Web App Starter <https://github.com/codediodeio/a
 
 Jeff Delaney GitHub: <https://github.com/codediodeio>  
 AngularFirebase GitHub: <https://github.com/AngularFirebase>  
+Stephen Fluin GitHub <https://github.com/StephenFluin>  
 
-## Jeff Delaney (AngularFirebase)
+# Jeff Delaney (AngularFirebase)
 
 ### Title: Consultant, Google Developer Expetrts (Firebase GDE)
 
@@ -155,8 +157,6 @@ AngularFirebase GitHub: <https://github.com/AngularFirebase>
 ### twitter: @Jeffdelaney23
 
 ### github: codediodeio
-
-## Angular 5 Service Worker
 
 # Example Angular 5 PWA (Progressive Web App) Apps
 
