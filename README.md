@@ -25,7 +25,7 @@ Angular Blog <https://blog.angular.io/>
 
 AngularFirebase <https://angularfirebase.com/>  
 
-# Interesting Upcoming Technolory
+# Interesting Upcoming Technology
 
 Ionic capacitor  
     Blog <https://blog.ionicframework.com/announcing-capacitor-1-0-0-alpha/>  
