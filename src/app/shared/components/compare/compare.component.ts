@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { User } from './../../../models/user';
 import { Profile } from './../../../models/profile';
 import { ApplicationService } from './../../../core/application.service';
+import { ZipcodesService } from './../../../core/zipcodes.service';
 
 @Component({
   selector: 'app-compare',
@@ -20,11 +21,14 @@ export class CompareComponent implements OnInit {
   profiles: Observable<any[]>;
   uid : string;
   product: string;
+  state: string;
+  zipcodeData;
 
   constructor(
     public router: Router,
     private afs: AngularFirestore,
-    private applicationService: ApplicationService) { 
+    private applicationService: ApplicationService,
+    private zipcodesService: ZipcodesService) { 
       this.users = afs.collection('users').valueChanges();
       this.profiles = afs.collection('profiles').valueChanges();
       this.rates = this.afs.collection('rates').valueChanges();
@@ -41,6 +45,10 @@ export class CompareComponent implements OnInit {
     //   product = JSON.stringify(value[0]);
     // });
   }
+  onClickGetRates () {
+    this.getState('80439');
+  }
+
   onClickApplyNow(uid:string, product:string) {
     this.uid = uid;
     this.product = product;
@@ -48,5 +56,20 @@ export class CompareComponent implements OnInit {
     this.applicationService.setProduct (this.product);
     console.log ('uid: ', uid, ' product: ', product);
     this.router.navigate(['/application']);
+  }
+
+  getState (zipCode: string) {
+    this.zipcodesService.getState(zipCode).subscribe(
+      // the first argument is a function which runs on success
+      data => {
+        this.zipcodeData = data;
+        this.state = this.zipcodeData.results[0].address_components[2].short_name;
+        console.log ('State: ' + this.state);
+      },
+      // the second argument is a function which runs on error
+      err => console.error(err),
+      // the third argument is a function which runs on completion
+      () => console.log('done getting zipcode data')
+    );    
   }
 }

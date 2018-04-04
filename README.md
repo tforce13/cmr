@@ -255,7 +255,7 @@ This spins up a Node.js httpd which serves the files in your directory as static
 
 # Geocoding API key
 
-     AIzaSyBtpQ6TfOFo3FP-DoZib_iKoaN1ddOThn4
+     AIzaSyA3_BMvfU2NLAI4ULNoGzC9Ngr1EqNXtgs
 
 # Sendgrid
 
@@ -271,6 +271,12 @@ This spins up a Node.js httpd which serves the files in your directory as static
 ## SBBnet SendGrid API Key
 
     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
+
+# ZipCodeAPI
+
+## Application Key
+
+     WWC3sx7NLX8gNfT5RHhwoVav3cjn9Ww2bplAa6anSNTdwJZZ7mV7nCm4DVKX6RRy
 
 # Add Firebase Credentials
 
@@ -473,7 +479,7 @@ firebase deploy -P prod
 
 ### Development
 
-url: <https://CompareMortgageRates.com>
+url: <not yet setup>
 
 ### Test
 
@@ -481,7 +487,7 @@ url: <not yet setup>
 
 ### Production
 
-url: <not yet setup>
+url: <https://CompareMortgageRates.com>
 
 
 ## GitHub Account
@@ -509,6 +515,7 @@ company: SBBnet
     ng generate service core/profile -m core
     ng generate service core/application -m core
     ng generate service core/contact -m core
+    ng generate service core/zipcodes -m core
     ng generate guard core/auth -m core
     ng generate module pages -m app
     ng generate module pages/pages-routing -m pages/pages
