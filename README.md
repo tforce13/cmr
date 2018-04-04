@@ -36,6 +36,8 @@ Ionic capacitor
 
 Node.JS + SendGrid + TypeScript <http://brianflove.com/2017/03/15/node-sendgrid-typescript/>  
 File uploads come to AngularFire <https://blog.angular.io/file-uploads-come-to-angularfire-6842352b3b47>  
+A new Angular Service Worker — creating automatic progressive web apps. Part 1: theory <https://medium.com/progressive-web-apps/a-new-angular-service-worker-creating-automatic-progressive-web-apps-part-1-theory-37d7d7647cc7>  
+A new Angular Service Worker — creating automatic progressive web apps. Part 2: practice <https://medium.com/google-developer-experts/a-new-angular-service-worker-creating-automatic-progressive-web-apps-part-2-practice-3221471269a1>
 
 # git
 
