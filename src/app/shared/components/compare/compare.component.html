@@ -4,16 +4,16 @@
 <p class="h5 text-center mb-4">Compare Rates</p>
 <div id="compare"> 
     <div class="container flex-center">
-    <form>
+    <form (ngSubmit)="onClickGetRates()" [formGroup]="compareForm">
         <div class="row">
             <div class="col-md-6">
                 <div class="md-form">  
                     <label class="" for="ziporstate">Zip or State</label>
-                    <input mdbActive type="text" class="form-control" id="ziporstate">
+                    <input mdbActive type="text" formControlName="ziporstate">
                 </div>
             </div>         
             <div class="col-md-6">
-                <button class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius (click)="onClickGetRates()">Get Rates</button>
+                <button type="submit" class="btn btn-outline-primary btn-rounded waves-effect" mdbRippleRadius>Get Rates</button>
             </div>
         </div>
     </form>

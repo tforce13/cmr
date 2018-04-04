@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { first, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { User } from './../../../models/user';
 import { Profile } from './../../../models/profile';
+import { Compare } from './../../../models/compare'
 import { ApplicationService } from './../../../core/application.service';
 import { ZipcodesService } from './../../../core/zipcodes.service';
 
@@ -14,8 +16,9 @@ import { ZipcodesService } from './../../../core/zipcodes.service';
   styleUrls: ['./compare.component.scss']
 })
 
+
 export class CompareComponent implements OnInit {
- 
+  compareForm : FormGroup;
   rates: Observable<any[]>;
   users: Observable<any[]>;
   profiles: Observable<any[]>;
@@ -28,25 +31,37 @@ export class CompareComponent implements OnInit {
     public router: Router,
     private afs: AngularFirestore,
     private applicationService: ApplicationService,
-    private zipcodesService: ZipcodesService) { 
+    private zipcodesService: ZipcodesService,
+    private fb: FormBuilder) { 
       this.users = afs.collection('users').valueChanges();
       this.profiles = afs.collection('profiles').valueChanges();
       this.rates = this.afs.collection('rates').valueChanges();
   }
 
   ngOnInit() {
-    // let list: string;
-    // let product: string;
-    // let value: any;
-    // this.rates.subscribe(data => {
-    //   list = JSON.stringify(data);
-    //   console.log('data', JSON.stringify(data));
-    //   value = data;
-    //   product = JSON.stringify(value[0]);
-    // });
+    this.compareForm = this.fb.group({
+      ziporstate: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    });
   }
+
+  get ziporstate() { return this.compareForm.get('ziporstate'); }
+
+  consoleLogRates() {
+    let list: string;
+    let product: string;
+    let value: any;
+    this.rates.subscribe(data => {
+      list = JSON.stringify(data);
+      console.log('data', JSON.stringify(data));
+      value = data;
+      product = JSON.stringify(value[0]);
+    });
+  }
+
   onClickGetRates () {
-    this.getState('80439');
+    console.log ('************  onSubmit ***************');
+    alert('Hello Bill');
+    //this.getState('80439');
   }
 
   onClickApplyNow(uid:string, product:string) {
