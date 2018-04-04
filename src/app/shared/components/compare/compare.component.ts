@@ -58,7 +58,7 @@ export class CompareComponent implements OnInit {
     });
   }
 
-  onClickGetRates () {
+  onSubmit () {
     console.log ('************  onSubmit ***************');
     alert('Hello Bill');
     //this.getState('80439');
