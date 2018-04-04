@@ -12,6 +12,15 @@ Firebase CLI <https://firebase.google.com/docs/cli/>
 AnguarFire2 <https://github.com/angular/angularfire2>  
 RxJS <http://reactivex.io/rxjs/>  
 
+# Relative Web Sites
+
+Can I Use <https://caniuse.com/>
+
+# Blog Web Sites
+
+Angular Blog <https://blog.angular.io/>  
+
+
 # Learning Web Sites
 
 AngularFirebase <https://angularfirebase.com/>  
@@ -26,6 +35,7 @@ Ionic capacitor
 # Relative Articles
 
 Node.JS + SendGrid + TypeScript <http://brianflove.com/2017/03/15/node-sendgrid-typescript/>  
+File uploads come to AngularFire <https://blog.angular.io/file-uploads-come-to-angularfire-6842352b3b47>  
 
 # git
 
@@ -153,13 +163,12 @@ Start Visual Studio Code in command line
 
 ## AngularAir
 
-### website: <https://angularair.com/>
-
-### YouTube: <https://www.youtube.com/c/AngularAirPodcast>
+website: <https://angularair.com/>  
+YouTube: <https://www.youtube.com/c/AngularAirPodcast>  
 
 # YouTube
 
-## Demos With Angular <https://www.youtube.com/channel/UCYFd7Qy93YP7gPERnxP545A>
+Demos With Angular <https://www.youtube.com/channel/UCYFd7Qy93YP7gPERnxP545A>  
 
 # Sample GitHub Repositories
 
@@ -175,11 +184,11 @@ David East GitHub: <https://github.com/davideast>
 
 # Jeff Delaney (AngularFirebase)
 
-    Title: Consultant, Google Developer Expetrts (Firebase GDE)
-    email: hello@jeffdelaney.me
-    gmail: delaneyphx@gmail.com
-    twitter: @Jeffdelaney23
-    github: codediodeio
+Title: Consultant, Google Developer Expetrts (Firebase GDE)  
+email: hello@jeffdelaney.me  
+gmail: delaneyphx@gmail.com  
+twitter: @Jeffdelaney23  
+github: codediodeio  
 
 # Example Angular 5 PWA (Progressive Web App) Apps
 
