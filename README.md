@@ -492,8 +492,8 @@ url: <https://CompareMortgageRates.com>
 
 ## GitHub Account
 
-username: sbbnet
-email: bbest@loanbright.com
+username: sbbnet  
+email: bbest@loanbright.com  
 
 
 # iStock

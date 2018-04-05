@@ -171,12 +171,12 @@ export class ProfileComponent implements OnInit {
                 wa:        profile.enabledState.wa,
                 wv:        profile.enabledState.wv,
                 wi:        profile.enabledState.wi,
-                wy:        profile.enabledState.wy                  
-              });             
+                wy:        profile.enabledState.wy
+              });
             }
-          });           
+          });
         } else {
-          alert('not logged in')
+          alert('not logged in');
         }
       })
     )
