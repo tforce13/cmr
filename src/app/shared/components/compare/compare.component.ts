@@ -116,7 +116,7 @@ export class CompareComponent implements OnInit {
   onClickGetRates (ziporstate: string) {
     console.log ('************  onSubmit ***************');
     alert(ziporstate);
-    //this.getState('80439');
+    // this.getState('80439');
   }
 
   onClickApplyNow(uid: string, product: string) {
