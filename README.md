@@ -257,21 +257,6 @@ This spins up a Node.js httpd which serves the files in your directory as static
 
      AIzaSyA3_BMvfU2NLAI4ULNoGzC9Ngr1EqNXtgs
 
-# Sendgrid
-
-## Account
-
-    username: bbest
-    email: bbest@loanbight.com
-    
-## API key
-
-    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
-
-## SBBnet SendGrid API Key
-
-    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
-
 # ZipCodeAPI
 
 ## Application Key
